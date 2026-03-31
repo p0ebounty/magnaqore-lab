@@ -1,3 +1,7 @@
+import innaPhoto from '../assets/inna.jpg';
+import mashaPhoto from '../assets/masha.jpg';
+import artemPhoto from '../assets/artem.jpg';
+
 export interface LinkItem {
   label: string;
   url: string;
@@ -125,7 +129,7 @@ export const teamMembers: TeamMember[] = [
     name: "Ina Nistoras",
     title: "Co-Founder & CEO",
     tags: "AI Transformation Director · International Speaker · Strategic Advisor",
-    photoUrl: "https://cdn.gamma.app/pwsfkii4h2kvyu4/bb217795e31946acb4a08cd772cf8034/original/Gemini_Generated_Image_l11q1fl11q1fl11q.png",
+    photoUrl: innaPhoto,
     trustLine: "Trusted across: Government · Corporate · Startup · Education Institutions",
     highlights: [
       {
@@ -161,7 +165,7 @@ export const teamMembers: TeamMember[] = [
     name: "Maryia Sakavets",
     title: "Co-Founder & CTPO",
     tags: "AI Systems & Delivery Lead · AI Program Architect",
-    photoUrl: "https://cdn.gamma.app/pwsfkii4h2kvyu4/d709786a614b4c8d8c199f37069f14c0/original/WhatsApp-Image-2026-03-27-at-14.51.08.jpeg",
+    photoUrl: mashaPhoto,
     statLine: "1,500+ Students Trained · 20 AI Literacy Programs",
     highlights: [
       {
@@ -197,7 +201,7 @@ export const teamMembers: TeamMember[] = [
     name: "Artyom Malinouski",
     title: "AI Architect – Systems & CRM Integration",
     tags: "Enterprise AI systems architect",
-    photoUrl: "https://cdn.gamma.app/pwsfkii4h2kvyu4/1697c6ea475f48d9bced86009adf01f1/original/WhatsApp-Image-2026-03-27-at-14.38.51.jpeg",
+    photoUrl: artemPhoto,
     roleDescription: "Artyom leads the technical architecture and systems integration layer of our AI delivery model, with a focus on building enterprise-ready AI infrastructures that connect directly into real business operations.",
     highlights: [
       {
