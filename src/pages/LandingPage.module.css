@@ -1,0 +1,233 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.heroBgGlow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--accent-gold-glow) 0%, transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.heroSubtitle {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: var(--space-6);
+}
+
+.heroBody {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+.confidentialText {
+  margin-top: var(--space-4);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fadeDelay1 { animation-delay: 200ms; }
+.fadeDelay2 { animation-delay: 400ms; }
+.fadeDelay3 { animation-delay: 600ms; }
+.fadeDelay4 { animation-delay: 800ms; }
+
+/* Diagram */
+.shiftDiagram {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagramNodes {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.node {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+}
+
+.nodeFragmented {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.diagramArrow {
+  font-size: 2rem;
+  color: var(--accent-gold);
+}
+
+.nodeSystem {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  box-shadow: 0 0 20px var(--accent-gold-glow);
+  animation: pulseGold 3s infinite;
+}
+
+.diagramGlow {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(235, 177, 52, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+/* Problem Chaos Diagram */
+.problemSection {
+  border-top: 1px solid var(--border-light);
+}
+
+.subtitleItalic {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+}
+
+.chaosDiagram {
+  position: relative;
+  height: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.chaosNode {
+  position: absolute;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  animation: float 6s infinite alternate;
+}
+
+.chaosNode:nth-child(2) { animation-delay: 1s; animation-duration: 7s; }
+.chaosNode:nth-child(3) { animation-delay: 2s; animation-duration: 5s; }
+
+.chaosCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem 2rem;
+  background: rgba(255, 0, 0, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  color: #ef4444;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+}
+
+/* Solution Darker Mode for contrast */
+.lightBg {
+  background: var(--bg-card);
+}
+
+.pillarGrid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .pillarGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Team Section */
+.teamGrid {
+  margin-top: var(--space-8);
+}
+
+.teamCard {
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.teamCard:hover {
+  transform: translateY(-8px);
+}
+
+.teamPhotoWrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.teamPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.teamCard:hover .teamPhoto {
+  transform: scale(1.05);
+}
+
+.teamPhotoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, var(--bg-card) 100%);
+}
+
+.teamHighlights {
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--space-4);
+  margin-top: auto;
+}
+
+.ctaSection {
+  background: radial-gradient(circle at center, rgba(235, 177, 52, 0.05) 0%, var(--bg-dark) 100%);
+  padding: 8rem 0;
+}

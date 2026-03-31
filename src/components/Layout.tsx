@@ -1,0 +1,89 @@
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import styles from './Layout.module.css';
+
+const navLinks = [
+  { name: 'AI Operating System', path: '/ai-operating-system' },
+  { name: 'Partnership', path: '/partnership' },
+  { name: 'Case Studies', path: '/case-studies' },
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const location = useLocation();
+
+  return (
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
+        <div className={`container ${styles.headerContainer}`}>
+          <Link to="/" className={styles.logo}>
+            Magna<span>Qore</span>
+          </Link>
+          
+          <nav className={styles.desktopNav}>
+            {navLinks.map(link => (
+              <Link 
+                key={link.path} 
+                to={link.path}
+                className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <a href="mailto:contact@magnaqore.com" className="btn-primary">
+              Partner With Us
+            </a>
+          </nav>
+
+          <button 
+            className={styles.mobileMenuBtn}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className={styles.mobileNav}>
+            {navLinks.map(link => (
+              <Link 
+                key={link.path} 
+                to={link.path}
+                className={styles.mobileNavLink}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <a href="mailto:contact@magnaqore.com" className={styles.mobileNavLinkGold}>
+              Partner With Us
+            </a>
+          </div>
+        )}
+      </header>
+
+      <main className={styles.main}>
+        {children}
+      </main>
+
+      <footer className={styles.footer}>
+        <div className={`container ${styles.footerContainer}`}>
+          <div className={styles.footerBrand}>
+            <h3>Magna<span>Qore</span></h3>
+            <p>AI Implementation & Transformation Company</p>
+          </div>
+          <div className={styles.footerLinks}>
+            <Link to="/ai-operating-system">Capabilities</Link>
+            <Link to="/partnership">Model</Link>
+            <Link to="/case-studies">Experience</Link>
+          </div>
+        </div>
+        <div className={`container ${styles.copyright}`}>
+          <p>© {new Date().getFullYear()} MagnaQore USA & BSU QATAR. Strategic Partners Only.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
