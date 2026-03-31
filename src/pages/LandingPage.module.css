@@ -221,12 +221,16 @@
 
 .teamPhotoWrapper {
   width: 100%;
+  padding-bottom: 100%; /* Fallback for 1:1 aspect ratio */
   aspect-ratio: 1 / 1;
   overflow: hidden;
   position: relative;
 }
 
 .teamPhoto {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -250,6 +254,17 @@
   border-top: 1px solid var(--border-light);
   padding-top: var(--space-4);
   margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .teamCard {
+    padding: 0 !important;
+  }
+  
+  /* Make text padding scale down a bit on mobile since 2rem is wide */
+  .teamCard > div:nth-child(2) {
+    padding: 1.5rem !important;
+  }
 }
 
 .ctaSection {

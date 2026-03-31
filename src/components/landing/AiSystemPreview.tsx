@@ -113,7 +113,7 @@ export default function AiSystemPreview() {
         <div className="container" style={{ maxWidth: '1200px' }}>
           <KeySuccessFactorsDiagram />
           
-          <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', textAlign: 'center', borderLeft: '4px solid var(--accent-gold)', borderRadius: 'var(--radius-md)' }}>
+          <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', textAlign: 'center', borderLeft: '4px solid var(--accent-gold)', borderRadius: 'var(--radius-md)', marginTop: '4rem' }}>
              <p style={{ fontSize: '1.2rem', fontStyle: 'italic', lineHeight: 1.6, color: 'var(--text-primary)' }}>
                "The window between early adopter advantage and market expectation is closing. Partners who move now define the category. This convergence of pressures is generating the strongest market pull for AI transformation in history."
              </p>

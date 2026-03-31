@@ -43,7 +43,7 @@ export default function AboutAndProof() {
           
           <div className="reveal" ref={reveal}>
             <span className="badge">ABOUT THE COMPANY</span>
-            <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', lineHeight: 1.1 }}>Applied AI. Built for Real Business Environments.</h2>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 8vw, 3.5rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>Applied AI. Built for Real Business Environments.</h2>
             <p className="text-secondary" style={{ fontStyle: 'italic', fontSize: '1.2rem', marginBottom: '3rem' }}>
                MagnaQore (USA) & BSU (QATAR) are an AI implementation and education companies combining strategy, training, AI systems design, and execution.
             </p>
