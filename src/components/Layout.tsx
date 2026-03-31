@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import styles from './Layout.module.css';
+import logo from '../assets/logo.png';
 
 const navLinks = [
   { name: 'AI Operating System', path: '/ai-operating-system' },
@@ -17,8 +18,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
-          <Link to="/" className={styles.logo}>
-            Magna<span>Qore</span>
+          <Link to="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src={logo} alt="MagnaQore" style={{ height: '36px', width: 'auto', display: 'block' }} />
+            MagnaQore
           </Link>
           
           <nav className={styles.desktopNav}>
@@ -71,7 +73,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className={styles.footer}>
         <div className={`container ${styles.footerContainer}`}>
           <div className={styles.footerBrand}>
-            <h3>Magna<span>Qore</span></h3>
+            <h3>MagnaQore</h3>
             <p>AI Implementation & Transformation Company</p>
           </div>
           <div className={styles.footerLinks}>

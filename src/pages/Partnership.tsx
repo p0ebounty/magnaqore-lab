@@ -3,6 +3,7 @@ import { ArrowRightLeft, ShieldCheck, Diamond, Zap, CheckCircle2, ArrowRight } f
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 
+
 export default function Partnership() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
