@@ -118,6 +118,27 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .shiftDiagram {
+    height: auto;
+    padding: 3rem 0;
+  }
+  .diagramNodes {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  .diagramArrow {
+    transform: rotate(90deg);
+  }
+  .node {
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* Problem Chaos Diagram */
 .problemSection {
   border-top: 1px solid var(--border-light);

@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRightLeft, ShieldCheck, Diamond, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
+import logo from '../assets/logo.png';
 
 
 export default function Partnership() {
@@ -32,6 +34,10 @@ export default function Partnership() {
 
   return (
     <>
+      <SEO 
+        title="Partnership Framework | MagnaQore" 
+        description="Strategic revenue participation model. Partner with MagnaQore to launch a new AI transformation service line without building an internal team."
+      />
       <section className={styles.hero}>
         <div className={`container ${styles.heroContent}`}>
           <span className="badge">PARTNERSHIP FRAMEWORK</span>
@@ -81,7 +87,7 @@ export default function Partnership() {
                  {/* MagnaQore Side */}
                  <div style={{ padding: '2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--accent-gold)' }}>
                     <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(223, 172, 94, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
-                       <span className="text-gold" style={{ fontSize: '1.5rem', fontWeight: 700 }}>MQ</span>
+                       <img src={logo} alt="MagnaQore" style={{ width: '32px', height: 'auto', display: 'block' }} />
                     </div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'var(--text-primary)' }}>
                        <li>Methodology</li>
@@ -125,27 +131,27 @@ export default function Partnership() {
             </div>
             
             <div className="glass-panel" style={{ padding: '3rem' }}>
-               <h3 className="text-gold">Commercial Structure Benefits</h3>
-               <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem', color: 'var(--text-secondary)' }}>
-                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%'}}></div>
-                    Separate project agreement per engagement
+               <h3 className="text-gold" style={{ textAlign: 'center' }}>Commercial Structure Benefits</h3>
+               <ul style={{ listStyle: 'none', padding: 0, marginTop: '2rem', color: 'var(--text-secondary)', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '6px'}}></div>
+                    <span style={{ lineHeight: '1.4' }}>Separate project agreement per engagement</span>
                  </li>
-                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%'}}></div>
-                    Clear scope, deliverables & legal clarity
+                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '6px'}}></div>
+                    <span style={{ lineHeight: '1.4' }}>Clear scope, deliverables & legal clarity</span>
                  </li>
-                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%'}}></div>
-                    Tailored pricing by client size and complexity
+                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '6px'}}></div>
+                    <span style={{ lineHeight: '1.4' }}>Tailored pricing by client size and complexity</span>
                  </li>
-                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%'}}></div>
-                    No capability build required to participate
+                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '6px'}}></div>
+                    <span style={{ lineHeight: '1.4' }}>No capability build required to participate</span>
                  </li>
-                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%'}}></div>
-                    Scalable — repeatable across your client base
+                 <li style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%', flexShrink: 0, marginTop: '6px'}}></div>
+                    <span style={{ lineHeight: '1.4' }}>Scalable — repeatable across your client base</span>
                  </li>
                </ul>
             </div>
@@ -174,8 +180,8 @@ export default function Partnership() {
                  const Icon = item.icon;
                  return (
                    <div key={idx} className="glass-panel reveal" ref={reveal} style={{ padding: '2.5rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                      <div style={{ background: 'rgba(223,172,94,0.1)', padding: '1rem', borderRadius: '12px' }}>
-                         <Icon size={28} className="text-gold" />
+                      <div style={{ background: 'rgba(223,172,94,0.1)', padding: '1rem', borderRadius: '12px', flexShrink: 0, width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                         <Icon size={28} color="var(--accent-gold)" />
                       </div>
                       <div>
                          <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.3rem' }}>{item.title}</h3>

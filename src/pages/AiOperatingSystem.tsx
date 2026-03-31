@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 
@@ -37,6 +38,10 @@ export default function AiOperatingSystem() {
 
   return (
     <>
+      <SEO 
+        title="AI Operating System | MagnaQore" 
+        description="Discover the AI Operating System: a structured framework enabling AI to function coherently across your entire business operations."
+      />
       <section className={styles.hero}>
         <div className={`container ${styles.heroContent}`}>
           <span className="badge">CORE CAPABILITY</span>

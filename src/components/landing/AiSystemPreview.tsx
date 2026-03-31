@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { BrainCircuit, Settings, Network, Shield, Users, Target, Key } from 'lucide-react';
+import { BrainCircuit, Settings, Network, Shield, Users, Target, Key, ArrowDown, ArrowUp } from 'lucide-react';
 import KeySuccessFactorsDiagram from './KeySuccessFactorsDiagram';
 
 function useLocalReveal() {
@@ -42,16 +42,18 @@ export default function AiSystemPreview() {
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div className="reveal" ref={reveal}>
             <span className="badge">CORE CAPABILITY</span>
-            <h2 style={{ fontSize: '3.5rem', lineHeight: '1.1', marginBottom: '1.5rem' }}>WHAT IS AN AI OPERATING SYSTEM?</h2>
-            <p className="text-secondary" style={{ fontStyle: 'italic', fontSize: '1.2rem', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', lineHeight: '1.1', marginBottom: '1.5rem' }}>WHAT IS AN AI OPERATING SYSTEM?</h2>
+            <p className="text-secondary" style={{ fontStyle: 'italic', fontSize: '1.2rem', marginBottom: '4rem' }}>
               The internal operating layer that governs how AI functions across your entire organization.
             </p>
             
             {/* Animated Brain Component representation */}
-            <div style={{ position: 'relative', width: '200px', height: '200px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-               <BrainCircuit size={120} className="text-gold" style={{ animation: 'pulseGold 4s infinite' }} />
-               <div style={{ position: 'absolute', inset: 0, border: '1px dashed var(--accent-gold)', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
-               <div style={{ position: 'absolute', inset: -20, border: '1px dashed rgba(235, 177, 52, 0.2)', borderRadius: '50%', animation: 'spin-reverse 15s linear infinite' }}></div>
+            <div style={{ position: 'relative', width: '200px', height: '200px', margin: '4rem auto 2rem auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+               <div style={{ width: '100px', height: '100px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', animation: 'pulseGold 4s infinite' }}>
+                 <BrainCircuit size={100} className="text-gold" />
+               </div>
+               <div style={{ position: 'absolute', inset: 0, border: '1px dashed var(--accent-gold)', borderRadius: '50%', opacity: 0.8, animation: 'spin 20s linear infinite' }}></div>
+               <div style={{ position: 'absolute', inset: -20, border: '1px dashed rgba(235, 177, 52, 0.3)', borderRadius: '50%', animation: 'spin-reverse 15s linear infinite' }}></div>
             </div>
             
           </div>
@@ -137,13 +139,22 @@ export default function AiSystemPreview() {
                  <p className="text-muted">Client Access<br/>Positioning<br/>Account Ownership</p>
               </div>
 
-              {/* Connecting arrows */}
-              <div className="hidden md:flex flex-col gap-4 items-center z-10" style={{ position: 'relative' }}>
-                <div style={{ width: '150px', height: '2px', background: 'var(--accent-gold)', position: 'relative' }}>
-                   <div style={{ position: 'absolute', right: 0, top: '-4px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)', transform: 'rotate(45deg)' }}></div>
+              {/* Converging arrows - horizontal for md+, vertical for mobile */}
+              <div className="flex flex-col md:flex-row gap-4 items-center z-10 my-4 md:my-0">
+                {/* Mobile vertical arrows */}
+                <div className="md:hidden flex flex-row gap-8 items-center justify-center">
+                  <ArrowDown size={32} className="text-gold" />
+                  <ArrowUp size={32} className="text-muted" style={{ opacity: 0.5 }} />
                 </div>
-                <div style={{ width: '150px', height: '2px', background: 'var(--text-muted)', position: 'relative', opacity: 0.5 }}>
-                   <div style={{ position: 'absolute', left: 0, top: '-4px', width: '10px', height: '10px', borderBottom: '2px solid var(--text-muted)', borderLeft: '2px solid var(--text-muted)', transform: 'rotate(45deg)' }}></div>
+
+                {/* Desktop horizontal arrows */}
+                <div className="hidden md:flex flex-col gap-4 items-center relative">
+                  <div style={{ width: '150px', height: '2px', background: 'var(--accent-gold)', position: 'relative' }}>
+                     <div style={{ position: 'absolute', right: 0, top: '-4px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)', transform: 'rotate(45deg)' }}></div>
+                  </div>
+                  <div style={{ width: '150px', height: '2px', background: 'var(--text-muted)', position: 'relative', opacity: 0.5 }}>
+                     <div style={{ position: 'absolute', left: 0, top: '-4px', width: '10px', height: '10px', borderBottom: '2px solid var(--text-muted)', borderLeft: '2px solid var(--text-muted)', transform: 'rotate(45deg)' }}></div>
+                  </div>
                 </div>
               </div>
 

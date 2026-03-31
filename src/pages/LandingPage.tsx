@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight, Settings, Users, Scale } from 'lucide-react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 import partnerHeroImg from '../assets/future_interface_partner.png';
@@ -44,14 +45,28 @@ export default function LandingPage() {
 
   return (
     <>
+      <SEO 
+        title="MagnaQore | AI Implementation & Transformation Company" 
+        description="Strategic partnership opportunity for AI Operating System design and implementation. Lead the next wave of organizational transformation."
+      />
+      
       {/* SECTION 1: HERO */}
       <section className={styles.hero} style={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
         <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
           
-          <div className="flex flex-col text-left">
-            <span className={`badge ${styles.fadeDelay1}`} style={{ width: 'fit-content' }}>
-              PRESENTED BY MagnaQore | AI Implementation & Transformation Company
-            </span>
+          <div className="flex flex-col text-left min-w-0">
+            <div className={`badge marquee-badge ${styles.fadeDelay1}`}>
+              <div className="marquee-content">
+                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
+                <span className="marquee-separator">•</span>
+                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
+                <span className="marquee-separator">•</span>
+                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
+                <span className="marquee-separator">•</span>
+                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
+                <span className="marquee-separator">•</span>
+              </div>
+            </div>
             <h1 className={`animate-slide-up ${styles.heroTitle}`} style={{ textAlign: 'left', margin: '0 0 1rem 0' }}>
               Strategic <span className="text-gold">Partnership</span> Opportunity
             </h1>
@@ -118,7 +133,18 @@ export default function LandingPage() {
       {/* SECTION 3: THE PROBLEM */}
       <section className={`section ${styles.problemSection}`}>
         <div className="container text-center reveal" ref={reveal}>
-          <span className="badge">YESTERDAY'S MODEL & THE PROBLEM</span>
+          <div className="badge marquee-badge flex justify-center" style={{ margin: '0 auto 1.5rem auto' }}>
+             <div className="marquee-content marquee-content-fast">
+              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
+              <span className="marquee-separator">•</span>
+              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
+              <span className="marquee-separator">•</span>
+              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
+              <span className="marquee-separator">•</span>
+              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
+              <span className="marquee-separator">•</span>
+             </div>
+          </div>
           <h2>Fragmented AI Adoption Is a Structural Risk</h2>
           <p className={styles.subtitleItalic}>
             Most enterprises are experimenting with AI — but without a system to support it.

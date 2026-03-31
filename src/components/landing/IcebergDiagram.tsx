@@ -86,7 +86,7 @@ export default function IcebergDiagram() {
       </div>
 
       {/* Labels */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }} className="mt-8 md:mt-0 md:pl-8">
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1.5rem' }} className="mt-8 md:mt-0 md:pl-8">
         {pillars.map((item, i) => (
           <div 
             key={`label-${i}`} 
