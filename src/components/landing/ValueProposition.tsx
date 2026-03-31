@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { TrendingUp, FileText, Building2, Rocket } from 'lucide-react';
+import { TrendingUp, FileText, Building2, Rocket, CircleDollarSign, Building, Zap } from 'lucide-react';
 
 // Custom hook to trigger reveal animations on scroll
 function useLocalReveal() {
@@ -136,17 +136,23 @@ export default function ValueProposition() {
         
         <div className="container grid md:grid-cols-3 gap-8 text-center">
           <div className="reveal" ref={reveal} style={{ padding: '2rem' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💰</div>
+            <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+               <CircleDollarSign size={48} className="text-gold" />
+            </div>
             <h3 style={{ marginBottom: '1rem' }}>New Revenue</h3>
             <p className="text-muted">Launch a premium AI practice that creates a new growth line for your firm.</p>
           </div>
           <div className="reveal" ref={reveal} style={{ padding: '2rem', transitionDelay: '150ms' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🏗️</div>
+            <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+               <Building size={48} className="text-gold" />
+            </div>
             <h3 style={{ marginBottom: '1rem' }}>No Build Cost</h3>
             <p className="text-muted">Offer the capability without hiring, staffing, or assembling a team internally.</p>
           </div>
           <div className="reveal" ref={reveal} style={{ padding: '2rem', transitionDelay: '300ms' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚡</div>
+            <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+               <Zap size={48} className="text-gold" />
+            </div>
             <h3 style={{ marginBottom: '1rem' }}>Immediate Market Entry</h3>
             <p className="text-muted">Move quickly with a ready-to-deploy service that gets you into the market faster.</p>
           </div>

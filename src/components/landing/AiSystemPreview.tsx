@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { BrainCircuit, Settings, Network, Shield, Users, Target, Key } from 'lucide-react';
+import KeySuccessFactorsDiagram from './KeySuccessFactorsDiagram';
 
 function useLocalReveal() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -107,26 +108,8 @@ export default function AiSystemPreview() {
           </p>
         </div>
 
-        <div className="container" style={{ maxWidth: '1000px' }}>
-          <h3 className="text-gold" style={{ textAlign: 'center', marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '1rem' }}>Key Success Factors</h3>
-          <div className="grid md:grid-cols-2 gap-6" style={{ marginBottom: '4rem' }}>
-            <div className="glass-panel reveal" ref={reveal} style={{ padding: '2rem' }}>
-               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Economic Pressure</h4>
-               <p className="text-muted" style={{ fontSize: '0.95rem' }}>Cost reduction and operational efficiency are board-level mandates. AI is the lever.</p>
-            </div>
-            <div className="glass-panel reveal" ref={reveal} style={{ padding: '2rem' }}>
-               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Competitive Reality</h4>
-               <p className="text-muted" style={{ fontSize: '0.95rem' }}>AI-enabled competitors are gaining speed. Firms that delay risk structural disadvantage.</p>
-            </div>
-            <div className="glass-panel reveal" ref={reveal} style={{ padding: '2rem' }}>
-               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Operational Urgency</h4>
-               <p className="text-muted" style={{ fontSize: '0.95rem' }}>Organizations need to do more with existing teams. AI-native operations multiply capacity.</p>
-            </div>
-            <div className="glass-panel reveal" ref={reveal} style={{ padding: '2rem' }}>
-               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Workflow Modernization & Internal Resilience</h4>
-               <p className="text-muted" style={{ fontSize: '0.95rem' }}>Enterprise workflows are overdue for redesign. AI provides the architecture for the next era. They are reducing external dependencies and building internal operational capability.</p>
-            </div>
-          </div>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <KeySuccessFactorsDiagram />
           
           <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', textAlign: 'center', borderLeft: '4px solid var(--accent-gold)', borderRadius: 'var(--radius-md)' }}>
              <p style={{ fontSize: '1.2rem', fontStyle: 'italic', lineHeight: 1.6, color: 'var(--text-primary)' }}>
