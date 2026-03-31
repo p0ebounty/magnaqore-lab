@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 
 function useReveal() {
@@ -226,6 +227,16 @@ export default function AiOperatingSystem() {
               </div>
            </div>
         </div>
+      </section>
+
+      {/* READ NEXT */}
+      <section className="section" style={{ borderTop: '1px solid var(--border-light)', padding: '6rem 0' }}>
+         <div className="container text-center reveal" ref={reveal}>
+            <p className="text-muted" style={{ textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem', fontSize: '0.9rem' }}>Read Next</p>
+            <Link to="/partnership" style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s ease' }} className="hover:text-gold">
+               Partnership Framework <ArrowRight size={36} className="text-gold" />
+            </Link>
+         </div>
       </section>
     </>
   );
