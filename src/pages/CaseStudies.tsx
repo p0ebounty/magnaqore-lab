@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { GraduationCap, Mic } from 'lucide-react';
 import styles from './LandingPage.module.css';
-import { caseStudies } from '../data/content';
+import { caseStudies, teamMembers, credibilityHighlights } from '../data/content';
 
 export default function CaseStudies() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -59,6 +59,21 @@ export default function CaseStudies() {
               <p style={{ fontSize: '1.2rem', color: 'var(--text-primary)', lineHeight: 1.8 }}>
                 {flagship.description}
               </p>
+              {flagship.outcome && (
+                <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(235, 177, 52, 0.05)', borderLeft: '4px solid var(--accent-gold)' }}>
+                   <strong className="text-gold" style={{ display: 'block', marginBottom: '0.5rem' }}>BUSINESS OUTCOME:</strong>
+                   <p style={{ margin: 0 }}>{flagship.outcome}</p>
+                </div>
+              )}
+              {flagship.links && flagship.links.length > 0 && (
+                <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  {flagship.links.map((link, idx) => (
+                    <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}>
+                      {link.label} ↗
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
@@ -71,7 +86,22 @@ export default function CaseStudies() {
                  </p>
                  <h3 style={{ marginBottom: '1rem' }}>{cs.title}</h3>
                  <p className="text-muted" style={{ marginBottom: '1.5rem' }}>Client: <span className="text-secondary">{cs.client}</span></p>
-                 <p className="text-secondary" style={{ flex: 1 }}>{cs.description}</p>
+                 <p className="text-secondary" style={{ flex: 1, marginBottom: cs.outcome || (cs.links && cs.links.length > 0) ? '1.5rem' : 0 }}>{cs.description}</p>
+                 {cs.outcome && (
+                    <div style={{ marginBottom: cs.links && cs.links.length > 0 ? '1.5rem' : 0, paddingLeft: '1rem', borderLeft: '2px solid var(--accent-gold)' }}>
+                      <p className="text-gold" style={{ fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>OUTCOME</p>
+                      <p className="text-secondary" style={{ fontSize: '0.95rem', margin: 0 }}>{cs.outcome}</p>
+                    </div>
+                 )}
+                 {cs.links && cs.links.length > 0 && (
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: 'auto' }}>
+                      {cs.links.map((link, idx) => (
+                        <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: 'var(--accent-gold)', border: '1px solid rgba(235, 177, 52, 0.3)', padding: '0.25rem 0.75rem', borderRadius: '4px', textDecoration: 'none' }} className="hover:bg-gold-light transition-colors">
+                           {link.label} ↗
+                        </a>
+                      ))}
+                    </div>
+                 )}
                </div>
             ))}
           </div>
@@ -91,77 +121,61 @@ export default function CaseStudies() {
 
         <div className="container grid md:grid-cols-2 gap-12">
           
-          {/* Ina's Highlights */}
-          <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', borderLeft: '4px solid var(--accent-gold)' }}>
-             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem', gap: '1rem' }}>
-                <Mic className="text-gold" size={32} />
-                <h3 style={{ margin: 0, fontSize: '2rem' }}>Ina Nistoras</h3>
-             </div>
-             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">AI Expert at European Commission & EIC event (with Deloitte, EWA, EISMEA)</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">AI Trainer for Boardroom Directors — DHL Qatar</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">AI Panel Discussion in Qatar & AI Expert Panelist in gaming industry</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Moderator at Women in Tech event & Mentor at Hackathons (Qatar Development Bank and M7)</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Kids Summer AI Camp — DHL corporate families</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Guest Speaker at Business Podcasts (e.g., I WANNA GROW PODCAST)</span>
-                </li>
-             </ul>
-          </div>
+          {teamMembers.filter(m => m.id === 'ina' || m.id === 'maryia').map((member, idx) => (
+            <div key={member.id} className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', borderLeft: idx === 0 ? '4px solid var(--accent-gold)' : 'none', borderRight: idx === 1 ? '4px solid var(--accent-gold)' : 'none' }}>
+               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem', gap: '1rem' }}>
+                  {idx === 0 ? <Mic className="text-gold" size={32} /> : <GraduationCap className="text-gold" size={32} />}
+                  <h3 style={{ margin: 0, fontSize: '2rem' }}>{member.name}</h3>
+               </div>
+               {idx === 1 && (
+                 <p className="text-muted" style={{ marginBottom: '1.5rem', fontStyle: 'italic', fontSize: '0.9rem' }}>
+                    Programs and materials created and developed by Maryia:
+                 </p>
+               )}
+               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                   {credibilityHighlights[member.id]?.map((bullet: any, bIdx: number) => (
+                      <li key={bIdx} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                         <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
+                         <div style={{ flex: 1 }}>
+                           {bullet.url ? (
+                             <a href={bullet.url} target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors" style={{ textDecoration: 'underline', textDecorationColor: 'var(--border-light)' }}>
+                               {bullet.text}
+                             </a>
+                           ) : (
+                             <span className="text-secondary">{bullet.text}</span>
+                           )}
 
-          {/* Maryia's Highlights */}
-          <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', borderRight: '4px solid var(--accent-gold)' }}>
-             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem', gap: '1rem' }}>
-                <GraduationCap className="text-gold" size={32} />
-                <h3 style={{ margin: 0, fontSize: '2rem' }}>Maryia Sakavets</h3>
-             </div>
-             <p className="text-muted" style={{ marginBottom: '1.5rem', fontStyle: 'italic', fontSize: '0.9rem' }}>
-                Programs and materials created and developed by Maryia:
-             </p>
-             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Mini-Course Program Accredited by Ministry of Education (Yekaterinburg, Russia)</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Program for Russian Venture Forum and Skolkovo (Moscow, Russia)</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Professional Development Program for Board of Directors of DHL (Doha, Qatar)</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">AI Consultant Avatars for Learning Gamification & Internship Program (Qatar University)</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Training Programs for BSU Web Development, Ulster University, & QDB Startup Hub M7 (Doha)</span>
-                </li>
-                <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                   <span className="text-gold" style={{ marginTop: '4px' }}>•</span>
-                   <span className="text-secondary">Charitable Training Program to Support Women (Moldova, Romania)</span>
-                </li>
-             </ul>
-          </div>
+                           {bullet.embedUrl && (
+                             <div style={{ marginTop: '1rem', width: '100%', aspectRatio: '16/9', borderRadius: '8px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                               <iframe 
+                                 width="100%" 
+                                 height="100%" 
+                                 src={bullet.embedUrl} 
+                                 title="YouTube video player" 
+                                 frameBorder="0" 
+                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                 allowFullScreen
+                               ></iframe>
+                             </div>
+                           )}
 
+                           {bullet.subLinks && bullet.subLinks.length > 0 && (
+                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.5rem', paddingLeft: '1rem', borderLeft: '2px solid rgba(235, 177, 52, 0.2)' }}>
+                               {bullet.subLinks.map((sub: any, sIdx: number) => (
+                                 <a key={sIdx} href={sub.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', color: 'var(--accent-gold)' }} className="hover:text-white transition-colors">
+                                    {sub.label} ↗
+                                 </a>
+                               ))}
+                             </div>
+                           )}
+                         </div>
+                      </li>
+                   ))}
+                 </ul>
+               </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

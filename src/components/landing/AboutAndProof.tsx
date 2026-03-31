@@ -33,7 +33,7 @@ function useLocalReveal() {
 
 export default function AboutAndProof() {
   const reveal = useLocalReveal();
-  const topCases = caseStudies.slice(0, 3);
+  const topCases = caseStudies.slice(0, 6);
 
   return (
     <>

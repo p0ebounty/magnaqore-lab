@@ -84,6 +84,16 @@ export default function AiOperatingSystem() {
                <h3 className="text-gold">Team Enablement</h3>
                <p className="text-secondary">Capability-building programs that create internal AI literacy and operational competence.</p>
             </div>
+
+            <div className="glass-panel reveal" ref={reveal} style={{ padding: '2rem' }}>
+               <h3 className="text-gold">Process Redesign</h3>
+               <p className="text-secondary">Re-engineer workflows to unlock AI-native efficiency, not just bolt-on automation.</p>
+            </div>
+
+            <div className="glass-panel reveal" ref={reveal} style={{ padding: '2rem' }}>
+               <h3 className="text-gold">Implementation Roadmaps</h3>
+               <p className="text-secondary">Phased deployment plans with clear milestones, KPIs, and scaling criteria.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -131,12 +141,12 @@ export default function AiOperatingSystem() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
              {[
-               { id: '01', title: 'Opportunity Identification', desc: 'Partner identifies or opens a relevant client opportunity within their existing base.' },
-               { id: '02', title: 'Joint Discovery', desc: 'Evaluating AI readiness, business context, and transformation potential.' },
-               { id: '03', title: 'Business Diagnosis', desc: 'Structured AI opportunity mapping: gaps, priorities, readiness.' },
-               { id: '04', title: 'Tailored Proposal', desc: 'Custom scope and transformation proposal developed with legal clarity.' },
-               { id: '05', title: 'AI OS Design & Implementation', desc: 'Architecture, workflow design, governance logic, and rollout.' },
-               { id: '06', title: 'Enablement & Optimization', desc: 'Team training, adoption support, and ongoing optimization.' }
+               { id: '01', title: 'Opportunity Identification', desc: 'Partner identifies or opens a relevant client opportunity within their existing account base.' },
+               { id: '02', title: 'Joint Discovery', desc: 'Joint qualification conversation — evaluating AI readiness, business context, and transformation potential.' },
+               { id: '03', title: 'Business Diagnosis', desc: 'Structured AI opportunity mapping: gaps, priorities, department readiness, and implementation complexity.' },
+               { id: '04', title: 'Tailored Proposal', desc: 'Custom scope and transformation proposal developed. Separate project agreement signed for that engagement.' },
+               { id: '05', title: 'AI OS Design & Implementation', desc: 'AI Operating System architecture, workflow design, governance logic, and rollout — delivered by MagnaQore.' },
+               { id: '06', title: 'Enablement & Optimization', desc: 'Team training, adoption support, and ongoing optimization to ensure sustainable internal ownership.' }
              ].map((step, idx) => (
                 <div key={idx} className="glass-panel reveal" ref={reveal} style={{ position: 'relative', overflow: 'hidden', padding: '2rem' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--accent-gold)' }}></div>

@@ -62,9 +62,9 @@ export default function Partnership() {
                        <span style={{ fontSize: '1.5rem', fontWeight: 700 }}>YOU</span>
                     </div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'var(--text-secondary)' }}>
-                       <li>Client Relationships</li>
-                       <li>Commercial Control</li>
-                       <li>Strategic Lead</li>
+                       <li>Client access</li>
+                       <li>Commercial positioning</li>
+                       <li>Account ownership</li>
                     </ul>
                  </div>
 
@@ -82,9 +82,10 @@ export default function Partnership() {
                        <span className="text-gold" style={{ fontSize: '1.5rem', fontWeight: 700 }}>MQ</span>
                     </div>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', color: 'var(--text-primary)' }}>
-                       <li>AI Engineering</li>
-                       <li>Delivery Teams</li>
-                       <li>Technical Infrastructure</li>
+                       <li>Methodology</li>
+                       <li>Systems architecture</li>
+                       <li>Implementation</li>
+                       <li>Delivery team</li>
                     </ul>
                  </div>
               </div>
@@ -92,41 +93,17 @@ export default function Partnership() {
         </div>
       </section>
 
-      {/* SECTION 2: WHY THIS WINS FOR YOU */}
-      <section className="section bg-card" style={{ background: 'var(--bg-glass)', borderTop: '1px solid var(--border-light)' }}>
-        <div className="container">
-           <div className="text-center reveal" ref={reveal} style={{ marginBottom: '4rem' }}>
-              <span className="badge">PARTNER VALUE</span>
-              <h2>Why This Wins For You</h2>
-           </div>
-
-           <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { icon: ShieldCheck, title: 'No Hiring Risk', desc: 'Expand your service portfolio instantly without the overhead, recruitment delay, or risk of hiring specialized AI talent internally.' },
-                { icon: Diamond, title: 'Premium Brand Positioning', desc: 'Go to market with an enterprise-grade AI Operating System offering, elevating your firm above generic prompt-engineering consultants.' },
-                { icon: Zap, title: 'Immediate Capability', desc: 'Start offering AI transformation to your clients this quarter with a proven, structured methodology already prepared for you.' },
-                { icon: CheckCircle2, title: 'Complete Fulfillment', desc: 'We handle the technical complexity — architecture, engineering, training, and deployment — allowing you to focus on account management.' }
-              ].map((item, idx) => {
-                 const Icon = item.icon;
-                 return (
-                   <div key={idx} className="glass-panel reveal" ref={reveal} style={{ padding: '2.5rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                      <div style={{ background: 'rgba(223,172,94,0.1)', padding: '1rem', borderRadius: '12px' }}>
-                         <Icon size={28} className="text-gold" />
-                      </div>
-                      <div>
-                         <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.3rem' }}>{item.title}</h3>
-                         <p className="text-secondary" style={{ lineHeight: 1.6 }}>{item.desc}</p>
-                      </div>
-                   </div>
-                 );
-              })}
-           </div>
-        </div>
-      </section>
-
-      {/* SECTION 3: COMMERCIAL TERMS */}
-      <section className="section" style={{ background: 'var(--bg-card)' }}>
+      {/* SECTION 2: COMMERCIAL FRAMEWORK — REVENUE MODEL */}
+      <section className="section" style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--border-light)' }}>
         <div className="container text-center reveal" ref={reveal}>
+          <div className="text-center" style={{ marginBottom: '4rem' }}>
+            <span className="badge">COMMERCIAL FRAMEWORK</span>
+            <h2>Strategic Revenue Participation Model</h2>
+            <p className="text-secondary" style={{ fontStyle: 'italic', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
+              A premium, high-value commercial structure designed for enterprise partnerships.
+            </p>
+          </div>
+
           <div className="glass-panel" style={{ padding: '4rem 2rem', borderTop: '4px solid var(--accent-gold)', marginBottom: '4rem' }}>
              <p className="text-secondary" style={{ letterSpacing: '2px', textTransform: 'uppercase' }}>Typical Client Engagement Value</p>
              <h2 style={{ fontSize: 'clamp(3rem, 5vw, 5rem)', color: 'var(--accent-amber)', margin: '1rem 0' }}>
@@ -164,6 +141,10 @@ export default function Partnership() {
                     <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%'}}></div>
                     No capability build required to participate
                  </li>
+                 <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <div style={{width: 8, height: 8, background: 'var(--accent-gold)', borderRadius: '50%'}}></div>
+                    Scalable — repeatable across your client base
+                 </li>
                </ul>
             </div>
           </div>
@@ -173,24 +154,82 @@ export default function Partnership() {
         </div>
       </section>
 
-      {/* SECTION 4: REVENUE PROJECTIONS */}
-      <section className="section" style={{ borderTop: '1px solid var(--border-light)' }}>
-        <div className="container text-center reveal" ref={reveal}>
-           <span className="badge">PROJECTIONS</span>
-           <h2 style={{ marginBottom: '3rem' }}>Revenue Upside (Annualized)</h2>
+      {/* SECTION 3: WHY THIS WINS FOR YOU */}
+      <section className="section" style={{ background: 'var(--bg-glass)', borderTop: '1px solid var(--border-light)' }}>
+        <div className="container">
+           <div className="text-center reveal" ref={reveal} style={{ marginBottom: '4rem' }}>
+              <span className="badge">WHY THIS WINS FOR YOU</span>
+              <h2>Partnership Benefits Summary</h2>
+           </div>
 
-           <div className="grid md:grid-cols-3 gap-6 text-left">
+           <div className="grid md:grid-cols-2 gap-6">
               {[
-                { deals: '1 Client Project', range: '$25,000 – $75,000', desc: 'High-leverage addition to an existing client relationship.' },
-                { deals: '3 Client Projects', range: '$75,000 – $225,000', desc: 'Meaningful new service line revenue.' },
-                { deals: '5 Client Projects', range: '$125,000 – $375,000', desc: 'Established AI delivery practice.' }
-              ].map((proj, idx) => (
-                 <div key={idx} className="glass-panel" style={{ padding: '2.5rem', position: 'relative', overflow: 'hidden' }}>
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: idx === 1 ? 'var(--accent-gold)' : 'rgba(255,255,255,0.1)' }}></div>
-                    <div className="text-secondary" style={{ textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.9rem', marginBottom: '1rem' }}>{proj.deals}</div>
-                    <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem' }}>{proj.range}</div>
-                    <p className="text-muted" style={{ fontSize: '0.95rem' }}>{proj.desc}</p>
-                 </div>
+                { icon: ShieldCheck, title: 'No Hiring Risk', desc: 'Expand your service portfolio instantly without the overhead, recruitment delay, or risk of hiring specialized AI talent internally.' },
+                { icon: Diamond, title: 'Premium Brand Positioning', desc: 'Go to market with an enterprise-grade AI Operating System offering, elevating your firm above generic prompt-engineering consultants.' },
+                { icon: Zap, title: 'Immediate Capability', desc: 'Start offering AI transformation to your clients this quarter with a proven, structured methodology already prepared for you.' },
+                { icon: CheckCircle2, title: 'Complete Fulfillment', desc: 'We handle the technical complexity — architecture, engineering, training, and deployment — allowing you to focus on account management.' }
+              ].map((item, idx) => {
+                 const Icon = item.icon;
+                 return (
+                   <div key={idx} className="glass-panel reveal" ref={reveal} style={{ padding: '2.5rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                      <div style={{ background: 'rgba(223,172,94,0.1)', padding: '1rem', borderRadius: '12px' }}>
+                         <Icon size={28} className="text-gold" />
+                      </div>
+                      <div>
+                         <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.3rem' }}>{item.title}</h3>
+                         <p className="text-secondary" style={{ lineHeight: 1.6 }}>{item.desc}</p>
+                      </div>
+                   </div>
+                 );
+              })}
+           </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: REVENUE UPSIDE (PROJECTIONS) */}
+      <section className="section" style={{ borderTop: '1px solid var(--border-light)' }}>
+        <div className="container reveal" ref={reveal}>
+           <div className="text-center" style={{ marginBottom: '4rem' }}>
+              <span className="badge">REVENUE UPSIDE</span>
+              <h2>Revenue Projection (Annualized)</h2>
+              <p className="text-secondary" style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
+                Modeled on average enterprise engagement values and typical partner participation rates.
+              </p>
+           </div>
+           
+           <div className="glass-panel" style={{ overflow: 'hidden' }}>
+              {/* Table Header */}
+              <div className="hidden md:grid md:grid-cols-3 gap-6 p-6" style={{ background: 'rgba(255,255,255,0.02)', borderBottom: '1px solid var(--border-light)', fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                 <div>Volume</div>
+                 <div>Total Deal Value (Est.)</div>
+                 <div>Partner Share (25% - 30%)</div>
+              </div>
+              
+              {/* Rows */}
+              {[
+                { deals: '1 Client Project', context: 'High-leverage addition to an existing client relationship.', value: '$100K – $250K', share: '$25,000 – $75,000', featured: false },
+                { deals: '3 Client Projects', context: 'Meaningful new service line revenue.', value: '$300K – $750K', share: '$75,000 – $225,000', featured: true },
+                { deals: '5 Client Projects', context: 'Established AI delivery practice.', value: '$500K – $1.25M', share: '$125,000 – $375,000', featured: false }
+              ].map((row, idx) => (
+                <div key={idx} className="grid md:grid-cols-3 gap-6 p-6 items-center" style={{ borderBottom: idx < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none', background: row.featured ? 'rgba(223, 172, 94, 0.05)' : 'transparent', position: 'relative' }}>
+                   {row.featured && <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: 'var(--accent-gold)' }}></div>}
+                   
+                   <div>
+                      <div className="md:hidden" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>Partner Volume</div>
+                      <div style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.25rem' }}>{row.deals}</div>
+                      <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{row.context}</div>
+                   </div>
+                   
+                   <div>
+                      <div className="md:hidden" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>Total Deal Value (Est.)</div>
+                      <div style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', fontFamily: 'monospace' }}>{row.value}</div>
+                   </div>
+                   
+                   <div>
+                      <div className="md:hidden" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>Partner Share (25% - 30%)</div>
+                      <div style={{ fontSize: '1.6rem', fontWeight: 700, color: row.featured ? 'var(--accent-gold)' : 'var(--text-primary)' }}>{row.share}</div>
+                   </div>
+                </div>
               ))}
            </div>
         </div>

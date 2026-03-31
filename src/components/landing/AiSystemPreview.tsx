@@ -123,8 +123,8 @@ export default function AiSystemPreview() {
                <p className="text-muted" style={{ fontSize: '0.95rem' }}>Organizations need to do more with existing teams. AI-native operations multiply capacity.</p>
             </div>
             <div className="glass-panel reveal" ref={reveal} style={{ padding: '2rem' }}>
-               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Workflow Modernization</h4>
-               <p className="text-muted" style={{ fontSize: '0.95rem' }}>Enterprise workflows are overdue for redesign. AI provides the architecture for the next era, reducing out-spending and building internal capabilities.</p>
+               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Workflow Modernization & Internal Resilience</h4>
+               <p className="text-muted" style={{ fontSize: '0.95rem' }}>Enterprise workflows are overdue for redesign. AI provides the architecture for the next era. They are reducing external dependencies and building internal operational capability.</p>
             </div>
           </div>
           
@@ -148,14 +148,14 @@ export default function AiSystemPreview() {
            </p>
 
            {/* Simple abstract partnership diagram block */}
-           <div className="glass-panel" style={{ padding: '4rem 2rem', maxWidth: '900px', margin: '0 auto 3rem', display: 'flex', alignItems: 'center', justifyContent: 'space-around', position: 'relative' }}>
+           <div className="glass-panel flex flex-col md:flex-row" style={{ gap: '2rem', padding: '4rem 2rem', maxWidth: '900px', margin: '0 auto 3rem', alignItems: 'center', justifyContent: 'space-around', position: 'relative' }}>
               <div style={{ flex: 1, zIndex: 2 }}>
                  <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Your Firm</h3>
                  <p className="text-muted">Client Access<br/>Positioning<br/>Account Ownership</p>
               </div>
 
               {/* Connecting arrows */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', zIndex: 1 }}>
+              <div className="hidden md:flex flex-col gap-4 items-center z-10" style={{ position: 'relative' }}>
                 <div style={{ width: '150px', height: '2px', background: 'var(--accent-gold)', position: 'relative' }}>
                    <div style={{ position: 'absolute', right: 0, top: '-4px', width: '10px', height: '10px', borderTop: '2px solid var(--accent-gold)', borderRight: '2px solid var(--accent-gold)', transform: 'rotate(45deg)' }}></div>
                 </div>

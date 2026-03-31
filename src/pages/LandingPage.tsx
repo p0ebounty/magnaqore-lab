@@ -178,6 +178,7 @@ export default function LandingPage() {
                 
                 {member.trustLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{member.trustLine}</p>}
                 {member.statLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{member.statLine}</p>}
+                {member.roleDescription && <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>{member.roleDescription}</p>}
                 
                 <div className={styles.teamHighlights}>
                   {member.highlights.map((highlight, hIdx) => (
@@ -187,7 +188,13 @@ export default function LandingPage() {
                         {highlight.bullets.map((bullet, bIdx) => (
                           <li key={bIdx} style={{ fontSize: '0.9rem', marginBottom: '0.5rem', position: 'relative', paddingLeft: '1rem', color: 'var(--text-secondary)' }}>
                             <span style={{ position: 'absolute', left: 0, color: 'var(--accent-gold)' }}>•</span>
-                            {bullet}
+                            {bullet.url ? (
+                              <a href={bullet.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline', textDecorationColor: 'var(--border-light)' }} className="hover:text-gold transition-colors">
+                                {bullet.text}
+                              </a>
+                            ) : (
+                              <span>{bullet.text}</span>
+                            )}
                           </li>
                         ))}
                       </ul>
