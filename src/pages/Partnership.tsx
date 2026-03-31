@@ -167,9 +167,6 @@ export default function Partnership() {
                </ul>
             </div>
           </div>
-          
-          </div>
-          
           <p className="reveal" ref={reveal} style={{ marginTop: '4rem', fontStyle: 'italic', color: 'var(--accent-gold)', fontSize: '1.2rem' }}>
              "One closed project generates $25K–$75K in partner revenue. Two to three engagements per year represents a meaningful new consulting income stream."
           </p>
