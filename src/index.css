@@ -6,6 +6,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent; /* Remove mobile blue tap flash */
+}
+
+/* Premium Web App Resets */
+img, svg {
+  -webkit-user-drag: none; /* Prevent ghost image dragging */
+  user-select: none;
+}
+
+/* Prevent accidental text selection on UI elements */
+button, a {
+  user-select: none;
+}
+
+/* Modern focus accessibility - replace default blue glow with brand color */
+*:focus {
+  outline: none;
+}
+*:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 4px;
 }
 
 ::selection {
@@ -33,6 +54,7 @@ html {
   scroll-padding-top: 100px;
   scrollbar-width: thin;
   scrollbar-color: var(--border-light) var(--bg-dark);
+  overscroll-behavior-y: none; /* Prevent "pull-to-refresh" rubber-banding on Safari/Mac */
 }
 
 ::-webkit-scrollbar {
