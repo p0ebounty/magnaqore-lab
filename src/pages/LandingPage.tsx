@@ -10,6 +10,8 @@ import ValueProposition from '../components/landing/ValueProposition';
 import AiSystemPreview from '../components/landing/AiSystemPreview';
 import AboutAndProof from '../components/landing/AboutAndProof';
 import IcebergDiagram from '../components/landing/IcebergDiagram';
+import SpotlightCard from '../components/SpotlightCard';
+import MagneticButton from '../components/MagneticButton';
 
 function useReveal() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -77,10 +79,12 @@ export default function LandingPage() {
               A high-value enterprise service line for strategic partners ready to lead the next wave of organizational transformation.
             </p>
             <div className={`animate-fade-in ${styles.fadeDelay4}`}>
-              <a href="#market-shift" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                Explore the Opportunity
-                <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-              </a>
+              <MagneticButton>
+                <a href="#market-shift" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                  Explore the Opportunity
+                  <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+                </a>
+              </MagneticButton>
               <p className={styles.confidentialText} style={{ textAlign: 'left', marginTop: '1.5rem' }}>Confidential — For Partner Evaluation Only</p>
             </div>
           </div>
@@ -157,29 +161,29 @@ export default function LandingPage() {
             {/* 3 Columns */}
             <div className="grid md:grid-cols-3 divide-y-2 md:divide-y-0 md:divide-x-2" style={{ borderColor: 'var(--border-light)' }}>
 
-              <div style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className="flex flex-col">
+              <SpotlightCard style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className={`flex flex-col ${styles.problemCard}`}>
                 <Settings className="text-gold" size={40} style={{ marginBottom: '2rem' }} />
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Tool Fragmentation</h3>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
                   Multiple disconnected AI tools operating in silos — chatbots, automations, content systems — with no unifying architecture or governance layer.
                 </p>
-              </div>
+              </SpotlightCard>
 
-              <div style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className="flex flex-col">
+              <SpotlightCard style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className={`flex flex-col ${styles.problemCard}`}>
                 <Users className="text-gold" size={40} style={{ marginBottom: '2rem' }} />
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Weak Internal Adoption</h3>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
                   Without structured enablement and workflow integration, AI tools are used inconsistently or abandoned. Technology investment fails to generate return.
                 </p>
-              </div>
+              </SpotlightCard>
 
-              <div style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className="flex flex-col">
+              <SpotlightCard style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className={`flex flex-col ${styles.problemCard}`}>
                 <Scale className="text-gold" size={40} style={{ marginBottom: '2rem' }} />
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>No Operating Foundation</h3>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
                   No internal AI ownership, no prioritization framework, no compliance logic. Every new AI initiative starts from scratch.
                 </p>
-              </div>
+              </SpotlightCard>
 
             </div>
 
@@ -229,7 +233,7 @@ export default function LandingPage() {
 
         <div className={`container grid md:grid-cols-3 gap-8 ${styles.teamGrid}`}>
           {teamMembers.map((member, idx) => (
-            <div key={member.id} className={`glass-panel reveal ${styles.teamCard}`} ref={reveal} style={{ transitionDelay: `${idx * 150}ms`, overflow: 'hidden' }}>
+            <SpotlightCard key={member.id} className={`glass-panel reveal ${styles.teamCard}`} ref={reveal} style={{ transitionDelay: `${idx * 150}ms`, overflow: 'hidden' }}>
               <div className={styles.teamPhotoWrapper}>
                 <img src={member.photoUrl} alt={member.name} className={styles.teamPhoto} />
                 <div className={styles.teamPhotoOverlay}></div>
@@ -265,7 +269,7 @@ export default function LandingPage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -277,9 +281,11 @@ export default function LandingPage() {
           <p className="text-secondary" style={{ fontSize: '1.2rem', margin: '1rem auto 3rem', maxWidth: '600px' }}>
             Let's discuss how this partnership creates value for your firm and your clients.
           </p>
-          <a href="mailto:ina.nistoras@magnaqore.io" className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3rem' }}>
-            Schedule a Conversation
-          </a>
+          <MagneticButton>
+            <a href="mailto:ina.nistoras@magnaqore.io" className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3rem' }}>
+              Schedule a Conversation
+            </a>
+          </MagneticButton>
         </div>
       </section>
 
@@ -287,7 +293,7 @@ export default function LandingPage() {
       <section className="section" style={{ borderTop: '1px solid var(--border-light)', padding: '6rem 0' }}>
         <div className="container text-center reveal" ref={reveal}>
           <p className="text-muted" style={{ textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem', fontSize: '0.9rem' }}>Read Next</p>
-          <Link to="/ai-operating-system" style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s ease' }} className="hover:text-gold">
+          <Link to="/ai-operating-system" style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: 'var(--text-primary)', textDecoration: 'none' }} className={styles.readNextLink}>
             AI Operating System <ArrowRight size={36} className="text-gold" />
           </Link>
         </div>

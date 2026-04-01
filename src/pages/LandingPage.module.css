@@ -161,6 +161,34 @@
   overflow: hidden;
 }
 
+.problemCard {
+  transition: background-color var(--transition-normal);
+  position: relative;
+}
+
+.problemCard:hover {
+  background-color: var(--bg-glass);
+}
+
+.problemCard svg {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.problemCard:nth-child(1):hover svg {
+  transform: rotate(90deg) scale(1.1);
+  color: var(--accent-gold);
+}
+
+.problemCard:nth-child(2):hover svg {
+  transform: translateY(-8px) scale(1.1);
+  color: var(--accent-amber);
+}
+
+.problemCard:nth-child(3):hover svg {
+  transform: rotate(-15deg) scale(1.1);
+  color: var(--accent-gold);
+}
+
 .chaosNode {
   position: absolute;
   padding: 0.75rem 1.5rem;
@@ -270,4 +298,20 @@
 .ctaSection {
   background: radial-gradient(circle at center, rgba(235, 177, 52, 0.05) 0%, var(--bg-dark) 100%);
   padding: 8rem 0;
+}
+
+.readNextLink {
+  transition: color var(--transition-normal);
+}
+
+.readNextLink:hover {
+  color: var(--accent-gold) !important;
+}
+
+.readNextLink svg {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.readNextLink:hover svg {
+  transform: translateX(12px);
 }

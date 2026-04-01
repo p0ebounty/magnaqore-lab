@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import styles from './Layout.module.css';
 import logo from '../assets/logo.png';
+import CustomCursor from './CustomCursor';
+import MagneticButton from './MagneticButton';
 
 const navLinks = [
   { name: 'AI Operating System', path: '/ai-operating-system' },
@@ -25,6 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className={styles.wrapper}>
+      <CustomCursor />
       <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
           <Link to="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -42,9 +45,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {link.name}
               </Link>
             ))}
-            <a href="mailto:ina.nistoras@magnaqore.io" className="btn-primary">
-              Partner With Us
-            </a>
+            <MagneticButton>
+              <a href="mailto:ina.nistoras@magnaqore.io" className="btn-primary">
+                Partner With Us
+              </a>
+            </MagneticButton>
           </nav>
 
           <button
