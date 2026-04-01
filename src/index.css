@@ -273,7 +273,7 @@ button {
     padding: var(--space-12) 0;
   }
   .glass-panel {
-    padding: 1.5rem !important;
+    padding: 1.5rem;
   }
 }
 

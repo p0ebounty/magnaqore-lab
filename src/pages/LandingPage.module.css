@@ -288,10 +288,10 @@
   .teamCard {
     padding: 0 !important;
   }
-  
-  /* Make text padding scale down a bit on mobile since 2rem is wide */
-  .teamCard > div:nth-child(2) {
-    padding: 1.5rem !important;
+
+  /* SpotlightCard wraps children in an inner div — remove its padding on mobile */
+  .teamCard > div {
+    padding: 0 !important;
   }
 }
 
