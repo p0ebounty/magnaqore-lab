@@ -135,7 +135,7 @@ export const teamMembers: TeamMember[] = [
       {
         title: "1. Enterprise Advisory",
         bullets: [
-          { text: "AI Trainer for Board Directors — DHL Qatar. First fully AI-literate Board in the country", url: "https://www.linkedin.com/posts/inanistoras_our-company-magnaqore-delivered-an-exclusive-activity-7188432360403378177-B8V5/" },
+          { text: "AI Trainer for Board Directors — DHL Qatar. First fully AI-literate Board in the country" },
           { text: "200+ startups & companies consulted" },
           { text: "Cross-sector: healthcare, logistics, retail, IT, edtech" }
         ]
@@ -143,10 +143,10 @@ export const teamMembers: TeamMember[] = [
       {
         title: "2. Global Thought Leadership",
         bullets: [
-          { text: "AI Expert — European Commission & EIC (with Deloitte)", url: "https://www.linkedin.com/posts/inanistoras_what-an-incredible-event-today-a-deep-activity-7191136458512809985-n8zS/" },
-          { text: "AI Panel Discussion — Qatar", url: "https://www.linkedin.com/posts/inanistoras_it-was-a-pleasure-yesterday-moderating-an-activity-7204739566379868160-58pY/" },
-          { text: "Moderator — Women in Tech", url: "https://www.linkedin.com/posts/inanistoras_such-a-great-discussion-we-had-yesterday-activity-7192735790479417344-t796/" },
-          { text: "AI Expert Panelist — Gaming Industry", url: "https://www.linkedin.com/posts/inanistoras_levelingup-videogameindustry-russia-activity-7170799676646875138-T17S/" }
+          { text: "AI Expert — European Commission & EIC (with Deloitte)" },
+          { text: "AI Panel Discussion — Qatar" },
+          { text: "Moderator — Women in Tech" },
+          { text: "AI Expert Panelist — Gaming Industry" }
         ]
       },
       {
@@ -155,7 +155,7 @@ export const teamMembers: TeamMember[] = [
           { text: "AI Trainer — universities & schools" },
           { text: "Kids AI Camp — DHL corporate families" },
           { text: "Hackathon Mentor — QDB Scale7" },
-          { text: "AI Trends Workshop Leader", url: "https://www.linkedin.com/posts/inanistoras_how-are-ai-trends-reshaping-qatars-tech-activity-7275396590825988096-R19y/" }
+          { text: "AI Trends Workshop Leader" }
         ]
       }
     ]
@@ -185,7 +185,7 @@ export const teamMembers: TeamMember[] = [
       {
         title: "3. Government-Accredited Programs",
         bullets: [
-          { text: "Russian Ministry of Education accredited AI program for 500+ students", url: "https://drive.google.com/file/d/1G1kE52R6b12Y8s9M9E5528M1S80Y5F5H/view?usp=sharing" }
+          { text: "Russian Ministry of Education accredited AI program for 500+ students" }
         ]
       },
       {
@@ -199,7 +199,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "artyom",
     name: "Artyom Malinouski",
-    title: "AI Architect – Systems & CRM Integration",
+    title: "CTO / AI Architect",
     tags: "Enterprise AI systems architect",
     photoUrl: artemPhoto,
     roleDescription: "Artyom leads the technical architecture and systems integration layer of our AI delivery model, with a focus on building enterprise-ready AI infrastructures that connect directly into real business operations.",
@@ -234,8 +234,8 @@ export const credibilityHighlights: Record<string, any[]> = {
     { text: "AI Expert Panelist in gaming industry", url: "https://www.linkedin.com/posts/ina-nistoras-258769300_gamedevelopment-aiingaming-esports-activity-7301722384875581443-bl8P" },
     { text: "AI Trainer for Boardroom Directors — DHL Qatar", url: "https://www.linkedin.com/posts/ina-nistoras-258769300_qatar-logistics-leadership-activity-7358164280703115264-Xtai" },
     { text: "Kids Summer AI Camp — DHL corporate families", url: "https://www.linkedin.com/posts/ina-nistoras-258769300_qatar-dhlsummercamp2025-goteach-activity-7351922643341570048-jOVL" },
-    { 
-      text: "AI Trainer at universities and schools", 
+    {
+      text: "AI Trainer at universities and schools",
       subLinks: [
         { label: "Link 1", url: "https://drive.google.com/file/d/1RolbqVeNmczs-O8ig0ASKFjwE0lMJ4tV/view?usp=sharing" },
         { label: "Link 2", url: "https://www.linkedin.com/posts/ina-nistoras-258769300_ai-aiineducation-aiskill-activity-7391022214818721793-iHD2" },
@@ -243,53 +243,53 @@ export const credibilityHighlights: Record<string, any[]> = {
       ]
     },
     { text: "Mentor at Hackathons — Qatar Development Bank and M7", url: "https://www.linkedin.com/posts/maximhamida_thats-a-wrap-on-scale7-future-creators-hackathon-ugcPost-7427653495652012032-K3Lf" },
-    { 
-      text: "Guest Speaker at Business Podcasts — I WANNA GROW PODCAST", 
+    {
+      text: "Guest Speaker at Business Podcasts — I WANNA GROW PODCAST",
       embedUrl: "https://www.youtube.com/embed/8X0DSe8KXoU?rel=0",
-      subLinks: [{ label: "Testimonials", url: "https://drive.google.com/file/d/1RolbqVeNmczs-O8ig0ASKFjwE0lMJ4tV/view?usp=sharing" }] 
+      subLinks: [{ label: "Testimonials", url: "https://drive.google.com/file/d/1RolbqVeNmczs-O8ig0ASKFjwE0lMJ4tV/view?usp=sharing" }]
     }
   ],
   maryia: [
     { text: "Training Programs for BSU Web Development (Doha, Qatar)", url: "https://miro.com/app/board/uXjVL2NNoTM=/?share_link_id=855590016182" },
-    { 
-      text: "MAED (Moscow, Russia)", 
+    {
+      text: "MAED (Moscow, Russia)",
       subLinks: [
         { label: "Presentation 1", url: "https://docs.google.com/presentation/d/1yrRLauIENh0jI3UHjy2DeTQDZeSgYPGU/edit?usp=drive_link&rtpof=true&sd=true" },
         { label: "Presentation 2", url: "https://docs.google.com/presentation/d/1QBVVMbQf97DeMVxx-NEeQCfbtJafLIs7/edit?usp=drive_link&rtpof=true&sd=true" },
         { label: "Presentation 3", url: "https://docs.google.com/presentation/d/1C86IlscCT8xCrLU0sHHo39eBrryOfSnm/edit?usp=drive_link&rtpof=true&sd=true" },
         { label: "Presentation 4", url: "https://docs.google.com/presentation/d/1w46nFy1pWWSXXs96Hye74f-9Uhc8q5xE/edit?usp=drive_link&rtpof=true&sd=true" }
-      ] 
+      ]
     },
-    { 
-      text: "Mini-Course Program Accredited by Ministry of Education (Yekaterinburg, Russia)", 
+    {
+      text: "Mini-Course Program Accredited by Ministry of Education (Yekaterinburg, Russia)",
       subLinks: [
         { label: "Program Document", url: "https://docs.google.com/document/d/1sJTnoi3fULl40t6ZMgwLC9YZNkb6fGj_pvucTLHEEG0/edit?usp=drivesdk" },
         { label: "Certificate from Ministry of Education", url: "https://drive.google.com/file/d/13ru2gJW1Cp60RohbwOw263HrIUG46kLN/view?usp=sharing" }
-      ] 
+      ]
     },
-    { 
-      text: "Program for Russian Venture Forum and Skolkovo (Moscow)", 
+    {
+      text: "Program for Russian Venture Forum and Skolkovo (Moscow)",
       subLinks: [
         { label: "Miro Board", url: "https://miro.com/app/board/uXjVJTIn8hM=/?share_link_id=884368452482" },
         { label: "Google Drive Folder", url: "https://drive.google.com/drive/folders/1v4JDuZrA9QFP55LNxWv4WJOVp6kjXxi1?usp=sharing" }
-      ] 
+      ]
     },
-    { 
-      text: "Children's AI Program (Doha, Qatar)", 
+    {
+      text: "Children's AI Program (Doha, Qatar)",
       subLinks: [
         { label: "Miro Board", url: "https://miro.com/app/board/uXjVIqCFH_8=/?share_link_id=458361041405" },
         { label: "Lesson 1 — Introduction to AI", url: "https://gamma.app/docs/Lesson-1-Introduction-to-AI-First-Encounter-95dv31iatdm8u8i" }
-      ] 
+      ]
     },
     { text: "Professional Development Program for Board of Directors of DHL (Doha, Qatar)", subLinks: [{ label: "Module 3 — Hard Skills, Digital Fluency, Automation", url: "https://gamma.app/docs/Module-3-Hard-Skills-Digital-Fluency-Automation-part-2-35g58dfwwabn18n" }] },
     { text: "Program for Ulster University Qatar (Doha, Qatar)", subLinks: [{ label: "PDF — AI Your Future", url: "https://gamma.app/docs/PDF-AI-Your-Future-How-to-Study-Think-and-Succeed-Smarter-4slqwc7pit9rtqu" }] },
     { text: "Program for QDB Startup Hub M7 (Doha, Qatar)", subLinks: [{ label: "AI for Creatives", url: "https://gamma.app/docs/AI-for-Creatives-Supercharge-Your-Business-klhdnuz9y6rppx8" }] },
-    { 
-      text: "Charitable Training Program to Support Women (Moldova, Romania)", 
+    {
+      text: "Charitable Training Program to Support Women (Moldova, Romania)",
       subLinks: [
         { label: "Lesson", url: "https://drive.google.com/file/d/1jsB0_q84TUapudiJ7Vpkg1Q8TNbpyFbn/view?usp=sharing" },
         { label: "Presentation", url: "https://gamma.app/docs/LECTIA-5-Cum-sa-alegi-instrumentele-AI-potrivite-si-sa-le-combini-eyxfimkwg9xxdef" }
-      ] 
+      ]
     },
     { text: "AI Consultant Avatars for Learning Gamification (Doha, Qatar)", subLinks: [{ label: "HR Director Example", url: "https://drive.google.com/file/d/1-9Ztr5jwiabi_42ttbLQtEN-Nfm5ZZL8/view?usp=sharing" }] },
     { text: "Internship Program for Qatar University Students (Doha, Qatar)", url: "https://drive.google.com/file/d/1ZwpugsJzZjhUj3yXYoPH6rxqzXydi2J2/view?usp=sharing" }

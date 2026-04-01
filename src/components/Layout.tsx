@@ -31,23 +31,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <img src={logo} alt="MagnaQore" style={{ height: '36px', width: 'auto', display: 'block' }} />
             MagnaQore
           </Link>
-          
+
           <nav className={styles.desktopNav}>
             {navLinks.map(link => (
-              <Link 
-                key={link.path} 
+              <Link
+                key={link.path}
                 to={link.path}
                 className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
               >
                 {link.name}
               </Link>
             ))}
-            <a href="mailto:contact@magnaqore.com" className="btn-primary">
+            <a href="mailto:ina.nistoras@magnaqore.io" className="btn-primary">
               Partner With Us
             </a>
           </nav>
 
-          <button 
+          <button
             className={styles.mobileMenuBtn}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -59,8 +59,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {isMenuOpen && (
           <div className={styles.mobileNav}>
             {navLinks.map(link => (
-              <Link 
-                key={link.path} 
+              <Link
+                key={link.path}
                 to={link.path}
                 className={styles.mobileNavLink}
                 onClick={() => setIsMenuOpen(false)}
@@ -68,7 +68,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {link.name}
               </Link>
             ))}
-            <a href="mailto:contact@magnaqore.com" className={styles.mobileNavLinkGold}>
+            <a href="mailto:ina.nistoras@magnaqore.io" className={styles.mobileNavLinkGold}>
               Partner With Us
             </a>
           </div>
