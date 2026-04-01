@@ -88,9 +88,9 @@ export default function CustomCursor() {
     };
 
     const moveAura = () => {
-      // Lerp (linear interpolation) for smooth following
-      aura.current.x += (mouse.current.x - aura.current.x) * 0.1;
-      aura.current.y += (mouse.current.y - aura.current.y) * 0.1;
+      // Точное следование за курсором без задержки
+      aura.current.x = mouse.current.x;
+      aura.current.y = mouse.current.y;
 
       // Spring physics for "jelly" scaling effect
       const targetScales = getTargetScales();
@@ -185,10 +185,10 @@ export default function CustomCursor() {
           zIndex: 9999,
           pointerEvents: 'none',
           mixBlendMode: 'screen',
-          width: '400px',
-          height: '400px',
-          marginLeft: '-200px',
-          marginTop: '-200px',
+          width: '300px',
+          height: '300px',
+          marginLeft: '-150px',
+          marginTop: '-150px',
           opacity: 0,
           transition: 'opacity 0.3s ease-out',
           willChange: 'transform, opacity',
