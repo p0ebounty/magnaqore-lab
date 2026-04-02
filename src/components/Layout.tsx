@@ -5,6 +5,8 @@ import styles from './Layout.module.css';
 import logo from '../assets/logo.png';
 import CustomCursor from './CustomCursor';
 import MagneticButton from './MagneticButton';
+import ContactModal from './ContactModal';
+import { useContactModal } from '../context/ContactContext';
 
 const navLinks = [
   { name: 'AI Operating System', path: '/ai-operating-system' },
@@ -15,6 +17,7 @@ const navLinks = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
+  const { openContactModal } = useContactModal();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -28,6 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.wrapper}>
       <CustomCursor />
+      <ContactModal />
       <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
           <Link to="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -46,9 +50,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
             <MagneticButton>
-              <a href="mailto:ina.nistoras@magnaqore.io" className="btn-primary">
+              <button onClick={openContactModal} className="btn-primary" style={{ fontFamily: 'inherit', fontSize: 'inherit' }}>
                 Partner With Us
-              </a>
+              </button>
             </MagneticButton>
           </nav>
 
@@ -73,9 +77,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {link.name}
               </Link>
             ))}
-            <a href="mailto:ina.nistoras@magnaqore.io" className={styles.mobileNavLinkGold}>
+            <button 
+              onClick={() => { setIsMenuOpen(false); openContactModal(); }} 
+              className={styles.mobileNavLinkGold}
+              style={{ textAlign: 'left', width: '100%', fontFamily: 'inherit' }}
+            >
               Partner With Us
-            </a>
+            </button>
           </div>
         )}
       </header>

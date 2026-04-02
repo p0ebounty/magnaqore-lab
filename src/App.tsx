@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import AiOperatingSystem from './pages/AiOperatingSystem';
 import Partnership from './pages/Partnership';
 import CaseStudies from './pages/CaseStudies';
+import { ContactProvider } from './context/ContactContext';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -21,14 +22,16 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/ai-operating-system" element={<AiOperatingSystem />} />
-          <Route path="/partnership" element={<Partnership />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-        </Routes>
-      </Layout>
+      <ContactProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/ai-operating-system" element={<AiOperatingSystem />} />
+            <Route path="/partnership" element={<Partnership />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+          </Routes>
+        </Layout>
+      </ContactProvider>
     </BrowserRouter>
   );
 }

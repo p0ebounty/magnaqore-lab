@@ -12,6 +12,7 @@ import AboutAndProof from '../components/landing/AboutAndProof';
 import IcebergDiagram from '../components/landing/IcebergDiagram';
 import SpotlightCard from '../components/SpotlightCard';
 import MagneticButton from '../components/MagneticButton';
+import { useContactModal } from '../context/ContactContext';
 
 function useReveal() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -44,6 +45,7 @@ function useReveal() {
 
 export default function LandingPage() {
   const reveal = useReveal();
+  const { openContactModal } = useContactModal();
 
   return (
     <>
@@ -282,9 +284,9 @@ export default function LandingPage() {
             Let's discuss how this partnership creates value for your firm and your clients.
           </p>
           <MagneticButton>
-            <a href="mailto:ina.nistoras@magnaqore.io" className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3rem' }}>
+            <button onClick={openContactModal} className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3rem', fontFamily: 'inherit' }}>
               Schedule a Conversation
-            </a>
+            </button>
           </MagneticButton>
         </div>
       </section>
