@@ -78,11 +78,6 @@ export default function ContactModal() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-      
-      // Auto close after success
-      setTimeout(() => {
-        closeContactModal();
-      }, 2500);
     }, 1500);
   };
 
@@ -97,10 +92,13 @@ export default function ContactModal() {
           <>
             <h2 className={styles.title}>Partner With Us</h2>
             <p className={styles.subtitle}>
-              Leave your details and our strategic team will connect with you.
+              Reach out to us directly via email at<br/>
+              <span style={{ display: 'inline-block', marginTop: '16px', fontSize: '1.2rem' }}>
+                <a href="mailto:ina.nistoras@magnaqore.io" style={{ color: 'var(--accent-gold)', textDecoration: 'none', fontWeight: 'bold' }}>ina.nistoras@magnaqore.io</a>
+              </span>
             </p>
 
-            <form onSubmit={handleSubmit} className={styles.form} noValidate>
+            {/* <form onSubmit={handleSubmit} className={styles.form} noValidate>
               <div className={styles.inputGroup}>
                 <label htmlFor="name">Full Name</label>
                 <input 
@@ -160,7 +158,7 @@ export default function ContactModal() {
                   )}
                 </button>
               </MagneticButton>
-            </form>
+            </form> */}
           </>
         ) : (
           <div className={styles.successMessage}>

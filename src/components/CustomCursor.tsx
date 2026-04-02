@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
   const auraRef = useRef<HTMLDivElement>(null);
   const mouse = useRef({ x: 0, y: 0 });
   const aura = useRef({ x: 0, y: 0 });
@@ -9,8 +8,8 @@ export default function CustomCursor() {
   const isCharging = useRef<boolean>(false);
   
   // Spring physics states for scaling
-  const currentScale = useRef({ aura: 1, cursor: 1 });
-  const scaleVelocity = useRef({ aura: 0, cursor: 0 });
+  const currentScale = useRef({ aura: 1 });
+  const scaleVelocity = useRef({ aura: 0 });
 
   const [ripples, setRipples] = useState<{id: number, x: number, y: number, size: number}[]>([]);
   const rippleCount = useRef(0);
@@ -24,36 +23,28 @@ export default function CustomCursor() {
     let animationFrameId: number;
 
     const getTargetScales = () => {
-      if (!isCharging.current) return { aura: 1, cursor: 1 };
+      if (!isCharging.current) return { aura: 1 };
       const duration = Date.now() - clickStart.current;
       const progress = Math.min(duration / 1500, 1); // 0 to 1 over 1.5s
       
       return { 
         aura: 1 - (progress * 0.8), // shrinks down to 20% size
-        cursor: 1 - (progress * 0.5) // shrinks down to 50% size
       };
     };
 
     const handleMouseMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
       
-      // Move the small dot instantly with its current spring scale
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) scale(${currentScale.current.cursor})`;
-        cursorRef.current.style.opacity = '1'; // Ensure visible when moving
-      }
       if (auraRef.current) {
         auraRef.current.style.opacity = '1';
       }
     };
 
     const handleMouseLeaveWindow = () => {
-      if (cursorRef.current) cursorRef.current.style.opacity = '0';
       if (auraRef.current) auraRef.current.style.opacity = '0';
     };
 
     const handleMouseEnterWindow = () => {
-      if (cursorRef.current) cursorRef.current.style.opacity = '1';
       if (auraRef.current) auraRef.current.style.opacity = '1';
     };
 
@@ -103,18 +94,8 @@ export default function CustomCursor() {
       scaleVelocity.current.aura *= friction;
       currentScale.current.aura += scaleVelocity.current.aura;
 
-      // Cursor scale physics
-      scaleVelocity.current.cursor += (targetScales.cursor - currentScale.current.cursor) * spring;
-      scaleVelocity.current.cursor *= friction;
-      currentScale.current.cursor += scaleVelocity.current.cursor;
-
       if (auraRef.current) {
         auraRef.current.style.transform = `translate3d(${aura.current.x}px, ${aura.current.y}px, 0) scale(${currentScale.current.aura})`;
-      }
-      
-      // Always continuously applying scale to cursor via requestAnimationFrame ensures jelly bounce completes
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${mouse.current.x}px, ${mouse.current.y}px, 0) scale(${currentScale.current.cursor})`;
       }
 
       animationFrameId = requestAnimationFrame(moveAura);
@@ -139,13 +120,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Global styles to hide default cursor where we want our custom one */}
       <style>{`
-        @media (pointer: fine) {
-          body * {
-            cursor: none !important;
-          }
-        }
         @keyframes shockwave {
           0% { transform: scale(0.1); opacity: 0.8; border-width: 3px; }
           100% { transform: scale(1); opacity: 0; border-width: 0px; }
@@ -206,28 +181,6 @@ export default function CustomCursor() {
         />
       </div>
 
-      {/* The sharp inner dot */}
-      <div 
-        ref={cursorRef}
-        className="hidden md:block"
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          zIndex: 10000,
-          pointerEvents: 'none',
-          width: '8px',
-          height: '8px',
-          marginLeft: '-4px',
-          marginTop: '-4px',
-          backgroundColor: 'var(--accent-gold)',
-          borderRadius: '50%',
-          opacity: 0,
-          transition: 'opacity 0.2s ease-out',
-          willChange: 'transform, opacity',
-          boxShadow: '0 0 10px 2px rgba(235, 177, 52, 0.6)'
-        }}
-      />
     </>
   );
 }
