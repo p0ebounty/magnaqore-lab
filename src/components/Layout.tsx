@@ -77,8 +77,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {link.name}
               </Link>
             ))}
-            <button 
-              onClick={() => { setIsMenuOpen(false); openContactModal(); }} 
+            <button
+              onClick={() => { setIsMenuOpen(false); openContactModal(); }}
               className={styles.mobileNavLinkGold}
               style={{ textAlign: 'left', width: '100%', fontFamily: 'inherit' }}
             >
@@ -105,7 +105,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
         <div className={`container ${styles.copyright}`}>
-          <p>© {new Date().getFullYear()} MagnaQore USA & BSU QATAR. Strategic Partners Only.</p>
+          <p>© {new Date().getFullYear()} MagnaQore USA. Strategic Partners Only.</p>
         </div>
       </footer>
     </div>
