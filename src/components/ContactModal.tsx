@@ -81,6 +81,13 @@ export default function ContactModal() {
     }, 1500);
   };
 
+  // To prevent TS unused vars errors while form is commented out:
+  void Send;
+  void MagneticButton;
+  void isSubmitting;
+  void handleChange;
+  void handleSubmit;
+
   return (
     <div className={styles.overlay} onClick={closeContactModal}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
