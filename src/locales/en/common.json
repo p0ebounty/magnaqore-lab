@@ -1,0 +1,30 @@
+{
+  "brand": {
+    "name": "MagnaQore",
+    "logoAlt": "MagnaQore"
+  },
+  "nav": {
+    "aiOperatingSystem": "AI Operating System",
+    "partnership": "Partnership",
+    "caseStudies": "Case Studies"
+  },
+  "cta": {
+    "partnerWithUs": "Partner With Us"
+  },
+  "footer": {
+    "tagline": "AI Implementation & Transformation Company",
+    "capabilities": "Capabilities",
+    "model": "Model",
+    "experience": "Experience",
+    "copyright": "© {{year}} MagnaQore USA. Strategic Partners Only."
+  },
+  "lang": {
+    "ariaLabel": "Language",
+    "optionEn": "English",
+    "optionRu": "Русский"
+  },
+  "a11y": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  }
+}

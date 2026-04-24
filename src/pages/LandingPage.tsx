@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, Settings, Users, Scale } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
@@ -43,51 +44,61 @@ function useReveal() {
   return addToRefs;
 }
 
+type TeamId = 'ina' | 'maryia' | 'artyom';
+
 export default function LandingPage() {
+  const { t } = useTranslation('landing');
   const reveal = useReveal();
   const { openContactModal } = useContactModal();
+
+  const problemIcons = [Settings, Users, Scale];
+  const marqueeRepeat = [0, 1, 2, 3] as const;
 
   return (
     <>
       <SEO
-        title="MagnaQore | AI Implementation & Transformation Company"
-        description="Strategic partnership opportunity for AI Operating System design and implementation. Lead the next wave of organizational transformation."
+        title={t('seo.title')}
+        description={t('seo.description')}
       />
 
-      {/* SECTION 1: HERO */}
       <section className={styles.hero} style={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
-        <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
+        <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center min-w-0">
 
           <div className="flex flex-col text-left min-w-0">
-            <div className={`badge marquee-badge ${styles.fadeDelay1}`}>
+            <div className={`badge marquee-badge ${styles.staticMarquee} ${styles.fadeDelay1}`}>
               <div className="marquee-content">
-                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
-                <span className="marquee-separator">•</span>
-                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
-                <span className="marquee-separator">•</span>
-                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
-                <span className="marquee-separator">•</span>
-                <span className="marquee-text">PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY</span>
-                <span className="marquee-separator">•</span>
+                {marqueeRepeat.map((i) => (
+                  <span key={i}>
+                    <span className="marquee-text">{t('hero.marquee')}</span>
+                    <span className="marquee-separator">•</span>
+                  </span>
+                ))}
               </div>
             </div>
             <h1 className={`animate-slide-up ${styles.heroTitle}`} style={{ textAlign: 'left', margin: '0 0 1rem 0' }}>
-              Strategic <span className="text-gold">Partnership</span> Opportunity
+              {t('hero.titleBefore')}{' '}
+              <span className="text-gold">{t('hero.titleAccent')}</span>
+              {t('hero.titleAfter') ? (
+                <>
+                  {' '}
+                  {t('hero.titleAfter')}
+                </>
+              ) : null}
             </h1>
             <h2 className={`animate-slide-up ${styles.fadeDelay2} ${styles.heroSubtitle}`} style={{ textAlign: 'left', margin: '0 0 2rem 0' }}>
-              AI Operating System Design & Implementation
+              {t('hero.subtitle')}
             </h2>
             <p className={`animate-slide-up ${styles.fadeDelay3} ${styles.heroBody}`} style={{ textAlign: 'left', margin: '0 0 3rem 0', maxWidth: '100%' }}>
-              A high-value enterprise service line for strategic partners ready to lead the next wave of organizational transformation.
+              {t('hero.body')}
             </p>
             <div className={`animate-fade-in ${styles.fadeDelay4}`}>
               <MagneticButton>
                 <a href="#market-shift" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                  Explore the Opportunity
+                  {t('hero.cta')}
                   <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                 </a>
               </MagneticButton>
-              <p className={styles.confidentialText} style={{ textAlign: 'left', marginTop: '1.5rem' }}>Confidential — For Partner Evaluation Only</p>
+              <p className={styles.confidentialText} style={{ textAlign: 'left', marginTop: '1.5rem' }}>{t('hero.confidential')}</p>
             </div>
           </div>
 
@@ -99,8 +110,7 @@ export default function LandingPage() {
               border: '1px solid rgba(197, 155, 39, 0.2)',
               boxShadow: '0 25px 50px rgba(0,0,0,0.5), 0 0 60px rgba(197, 155, 39, 0.15)'
             }}>
-              <img src={partnerHeroImg} alt="Strategic Partnership Implementation" style={{ width: '100%', display: 'block' }} />
-              {/* Subtle gradient overlay to blend perfectly into dark mode */}
+              <img src={partnerHeroImg} alt={t('hero.heroImgAlt')} style={{ width: '100%', display: 'block' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(270deg, transparent 70%, var(--background) 100%)' }}></div>
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(0deg, var(--background) 0%, transparent 20%)' }}></div>
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, var(--background) 0%, transparent 20%)' }}></div>
@@ -111,85 +121,64 @@ export default function LandingPage() {
         <div className={styles.heroBgGlow}></div>
       </section>
 
-      {/* SECTION 2: THE MARKET SHIFT */}
       <section id="market-shift" className="section" style={{ position: 'relative' }}>
         <div className={`container grid md:grid-cols-2 gap-12 items-center`}>
           <div className="reveal" ref={reveal}>
-            <span className="badge">MARKET INTELLIGENCE</span>
-            <h2>The Market Is Shifting</h2>
+            <span className="badge">{t('marketShift.badge')}</span>
+            <h2>{t('marketShift.heading')}</h2>
             <h3 className="text-secondary" style={{ marginBottom: '1.5rem', fontWeight: 400 }}>
-              From Tool Adoption to AI-Native Operations
+              {t('marketShift.subheading')}
             </h3>
             <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
-              The enterprise landscape is undergoing a fundamental transition — and most service providers haven't repositioned yet.
+              {t('marketShift.body')}
             </p>
           </div>
           <div className={`reveal ${styles.shiftDiagram}`} ref={reveal}>
-            {/* Market Shift Code Component / Animation */}
             <div className={styles.diagramNodes}>
-              <div className={`${styles.node} ${styles.nodeFragmented}`}>Tools</div>
+              <div className={`${styles.node} ${styles.nodeFragmented}`}>{t('marketShift.diagramFrom')}</div>
               <div className={styles.diagramArrow}>→</div>
-              <div className={`${styles.node} ${styles.nodeSystem}`}>AI-Native Systems</div>
+              <div className={`${styles.node} ${styles.nodeSystem}`}>{t('marketShift.diagramTo')}</div>
             </div>
             <div className={styles.diagramGlow}></div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: THE PROBLEM */}
       <section className={`section ${styles.problemSection}`}>
         <div className="container text-center reveal" ref={reveal}>
-          <div className="badge marquee-badge flex justify-center" style={{ margin: '0 auto 1.5rem auto' }}>
+          <div className={`badge marquee-badge flex justify-center ${styles.staticMarquee} ${styles.staticMarqueeCenter}`} style={{ margin: '0 auto 1.5rem auto' }}>
             <div className="marquee-content marquee-content-fast">
-              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
-              <span className="marquee-separator">•</span>
-              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
-              <span className="marquee-separator">•</span>
-              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
-              <span className="marquee-separator">•</span>
-              <span className="marquee-text">YESTERDAY'S MODEL & THE PROBLEM</span>
-              <span className="marquee-separator">•</span>
+              {marqueeRepeat.map((i) => (
+                <span key={i}>
+                  <span className="marquee-text">{t('problem.marquee')}</span>
+                  <span className="marquee-separator">•</span>
+                </span>
+              ))}
             </div>
           </div>
-          <h2>Fragmented AI Adoption Is a Structural Risk</h2>
+          <h2>{t('problem.heading')}</h2>
           <p className={styles.subtitleItalic}>
-            Most enterprises are experimenting with AI — but without a system to support it.
+            {t('problem.subtitle')}
           </p>
 
           <div style={{ marginTop: '4rem', background: 'var(--surface-color)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-light)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
-            {/* Gold Top Bar */}
             <div style={{ height: '4px', background: 'var(--accent-gold)', width: '100%' }}></div>
 
-            {/* 3 Columns */}
             <div className="grid md:grid-cols-3 divide-y-2 md:divide-y-0 md:divide-x-2" style={{ borderColor: 'var(--border-light)' }}>
-
-              <SpotlightCard style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className={`flex flex-col ${styles.problemCard}`}>
-                <Settings className="text-gold" size={40} style={{ marginBottom: '2rem' }} />
-                <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Tool Fragmentation</h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
-                  Multiple disconnected AI tools operating in silos — chatbots, automations, content systems — with no unifying architecture or governance layer.
-                </p>
-              </SpotlightCard>
-
-              <SpotlightCard style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className={`flex flex-col ${styles.problemCard}`}>
-                <Users className="text-gold" size={40} style={{ marginBottom: '2rem' }} />
-                <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>Weak Internal Adoption</h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
-                  Without structured enablement and workflow integration, AI tools are used inconsistently or abandoned. Technology investment fails to generate return.
-                </p>
-              </SpotlightCard>
-
-              <SpotlightCard style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className={`flex flex-col ${styles.problemCard}`}>
-                <Scale className="text-gold" size={40} style={{ marginBottom: '2rem' }} />
-                <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>No Operating Foundation</h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
-                  No internal AI ownership, no prioritization framework, no compliance logic. Every new AI initiative starts from scratch.
-                </p>
-              </SpotlightCard>
-
+              {(t('problem.cards', { returnObjects: true }) as { title: string; body: string }[]).map((card, idx) => {
+                const Icon = problemIcons[idx];
+                return (
+                  <SpotlightCard key={idx} style={{ padding: '3rem 2.5rem', textAlign: 'left' }} className={`flex flex-col ${styles.problemCard}`}>
+                    <Icon className="text-gold" size={40} style={{ marginBottom: '2rem' }} />
+                    <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>{card.title}</h3>
+                    <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
+                      {card.body}
+                    </p>
+                  </SpotlightCard>
+                );
+              })}
             </div>
 
-            {/* Bottom Consequence Bar */}
             <div style={{
               background: 'rgba(255, 255, 255, 0.03)',
               borderTop: '1px solid var(--border-light)',
@@ -197,21 +186,20 @@ export default function LandingPage() {
               textAlign: 'center'
             }}>
               <p style={{ color: 'var(--text-primary)', margin: 0, fontSize: '1rem', fontWeight: 500 }}>
-                The result: multiple vendors, overlapping tools, duplicated costs, and an organization that is no closer to AI-native operations.
+                {t('problem.bottomBar')}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: THE SOLUTION */}
       <section className={`section ${styles.lightBg}`}>
         <div className="container reveal" ref={reveal}>
           <div className="text-center" style={{ marginBottom: '4rem' }}>
-            <span className="badge">TOMORROW'S STANDARD</span>
-            <h2>AI-Enabled Operating Infrastructure</h2>
+            <span className="badge">{t('solution.badge')}</span>
+            <h2>{t('solution.heading')}</h2>
             <p className="text-secondary" style={{ fontSize: '1.2rem' }}>
-              From isolated tools to a unified, enterprise-wide AI foundation.
+              {t('solution.sub')}
             </p>
           </div>
 
@@ -223,80 +211,84 @@ export default function LandingPage() {
       <AiSystemPreview />
       <AboutAndProof />
 
-      {/* SECTION 13: THE TEAM */}
       <section className="section" style={{ position: 'relative' }}>
         <div className="container text-center reveal" ref={reveal} style={{ marginBottom: '4rem' }}>
-          <span className="badge">EXPERTISE & LEADERSHIP</span>
-          <h2>The MagnaQore Team</h2>
+          <span className="badge">{t('team.badge')}</span>
+          <h2>{t('team.heading')}</h2>
           <p className="text-secondary" style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
-            Architects of intelligent transformation.
+            {t('team.sub')}
           </p>
         </div>
 
         <div className={`container grid md:grid-cols-3 gap-8 ${styles.teamGrid}`}>
-          {teamMembers.map((member, idx) => (
-            <SpotlightCard key={member.id} className={`glass-panel reveal ${styles.teamCard}`} ref={reveal} style={{ transitionDelay: `${idx * 150}ms`, overflow: 'hidden' }}>
-              <div className={styles.teamPhotoWrapper}>
-                <img src={member.photoUrl} alt={member.name} className={styles.teamPhoto} />
-                <div className={styles.teamPhotoOverlay}></div>
-              </div>
-              <div style={{ padding: '2rem' }}>
-                <h3 style={{ marginBottom: '0.25rem' }}>{member.name}</h3>
-                <p className="text-gold" style={{ fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem', letterSpacing: '0.05em' }}>{member.title.toUpperCase()}</p>
-                <p className="text-secondary" style={{ fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.4' }}>{member.tags}</p>
-
-                {member.trustLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{member.trustLine}</p>}
-                {member.statLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{member.statLine}</p>}
-                {member.roleDescription && <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>{member.roleDescription}</p>}
-
-                <div className={styles.teamHighlights}>
-                  {member.highlights.map((highlight, hIdx) => (
-                    <div key={hIdx} style={{ marginBottom: '1rem' }}>
-                      <strong style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{highlight.title}</strong>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                        {highlight.bullets.map((bullet, bIdx) => (
-                          <li key={bIdx} style={{ fontSize: '0.9rem', marginBottom: '0.5rem', position: 'relative', paddingLeft: '1rem', color: 'var(--text-secondary)' }}>
-                            <span style={{ position: 'absolute', left: 0, color: 'var(--accent-gold)' }}>•</span>
-                            {bullet.url ? (
-                              <a href={bullet.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline', textDecorationColor: 'var(--border-light)' }} className="hover:text-gold transition-colors">
-                                {bullet.text}
-                              </a>
-                            ) : (
-                              <span>{bullet.text}</span>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+          {teamMembers.map((member, idx) => {
+            const tid = member.id as TeamId;
+            return (
+              <SpotlightCard key={member.id} className={`glass-panel reveal ${styles.teamCard}`} ref={reveal} style={{ transitionDelay: `${idx * 150}ms`, overflow: 'hidden' }}>
+                <div className={styles.teamPhotoWrapper}>
+                  <img src={member.photoUrl} alt={member.name} className={styles.teamPhoto} />
+                  <div className={styles.teamPhotoOverlay}></div>
                 </div>
-              </div>
-            </SpotlightCard>
-          ))}
+                <div style={{ padding: '2rem' }}>
+                  <h3 style={{ marginBottom: '0.25rem' }}>{member.name}</h3>
+                  <p className="text-gold" style={{ fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem', letterSpacing: '0.05em' }}>{t(`teamMembers.${tid}.title`).toUpperCase()}</p>
+                  <p className="text-secondary" style={{ fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.4' }}>{t(`teamMembers.${tid}.tags`)}</p>
+
+                  {member.trustLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{t(`teamMembers.${tid}.trustLine`)}</p>}
+                  {member.statLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{t(`teamMembers.${tid}.statLine`)}</p>}
+                  {member.roleDescription && <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>{t(`teamMembers.${tid}.roleDescription`)}</p>}
+
+                  <div className={styles.teamHighlights}>
+                    {(t(`teamMembers.${tid}.highlights`, { returnObjects: true }) as { title: string; bullets: string[] }[]).map((highlight, hIdx) => (
+                      <div key={hIdx} style={{ marginBottom: '1rem' }}>
+                        <strong style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{highlight.title}</strong>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                          {highlight.bullets.map((text, bIdx) => {
+                            const orig = member.highlights[hIdx]?.bullets[bIdx];
+                            const bullet = orig;
+                            return (
+                              <li key={bIdx} style={{ fontSize: '0.9rem', marginBottom: '0.5rem', position: 'relative', paddingLeft: '1rem', color: 'var(--text-secondary)' }}>
+                                <span style={{ position: 'absolute', left: 0, color: 'var(--accent-gold)' }}>•</span>
+                                {bullet?.url ? (
+                                  <a href={bullet.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline', textDecorationColor: 'var(--border-light)' }} className="hover:text-gold transition-colors">
+                                    {text}
+                                  </a>
+                                ) : (
+                                  <span>{text}</span>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </SpotlightCard>
+            );
+          })}
         </div>
       </section>
 
-      {/* SECTION 14: CTA CLOSING */}
       <section className={`section ${styles.ctaSection}`}>
         <div className="container text-center reveal" ref={reveal}>
-          <h2>Ready to Lead the Next Wave?</h2>
+          <h2>{t('cta.heading')}</h2>
           <p className="text-secondary" style={{ fontSize: '1.2rem', margin: '1rem auto 3rem', maxWidth: '600px' }}>
-            Let's discuss how this partnership creates value for your firm and your clients.
+            {t('cta.body')}
           </p>
           <MagneticButton>
-            <button onClick={openContactModal} className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3rem', fontFamily: 'inherit' }}>
-              Schedule a Conversation
+            <button type="button" onClick={openContactModal} className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 3rem', fontFamily: 'inherit' }}>
+              {t('cta.button')}
             </button>
           </MagneticButton>
         </div>
       </section>
 
-      {/* READ NEXT */}
       <section className="section" style={{ borderTop: '1px solid var(--border-light)', padding: '6rem 0' }}>
         <div className="container text-center reveal" ref={reveal}>
-          <p className="text-muted" style={{ textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem', fontSize: '0.9rem' }}>Read Next</p>
+          <p className="text-muted" style={{ textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem', fontSize: '0.9rem' }}>{t('readNext.label')}</p>
           <Link to="/ai-operating-system" style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: 'var(--text-primary)', textDecoration: 'none' }} className={styles.readNextLink}>
-            AI Operating System <ArrowRight size={36} className="text-gold" />
+            {t('readNext.link')} <ArrowRight size={36} className="text-gold" />
           </Link>
         </div>
       </section>

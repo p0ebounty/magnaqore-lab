@@ -1,0 +1,24 @@
+{
+  "closeAria": "Close modal",
+  "title": "Partner With Us",
+  "subtitleLead": "Reach out to us directly via email at",
+  "successTitle": "Message Sent!",
+  "successBody": "Thank you for reaching out. We will be in touch with you shortly to discuss your AI transformation.",
+  "errors": {
+    "nameRequired": "Please enter your full name",
+    "emailRequired": "Please enter your work email",
+    "emailInvalid": "Please enter a valid email address",
+    "companyRequired": "Please enter your company/organization"
+  },
+  "form": {
+    "nameLabel": "Full Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Work Email",
+    "emailPlaceholder": "john@company.com",
+    "companyLabel": "Company / Organization",
+    "companyPlaceholder": "Company Ltd",
+    "messageLabel": "Message (Optional)",
+    "messagePlaceholder": "How can we help you?",
+    "submit": "Send Message"
+  }
+}

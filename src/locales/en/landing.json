@@ -1,0 +1,334 @@
+{
+  "seo": {
+    "title": "MagnaQore | AI Implementation & Transformation Company",
+    "description": "Strategic partnership opportunity for AI Operating System design and implementation. Lead the next wave of organizational transformation."
+  },
+  "hero": {
+    "marquee": "PRESENTED BY MAGNAQORE | AI IMPLEMENTATION & TRANSFORMATION COMPANY",
+    "titleBefore": "Opportunity for",
+    "titleAccent": "strategic partnership",
+    "titleAfter": "",
+    "subtitle": "AI Operating System Design & Implementation",
+    "body": "A high-value enterprise service line for strategic partners ready to lead the next wave of organizational transformation.",
+    "cta": "Explore the Opportunity",
+    "confidential": "Confidential — For Partner Evaluation Only",
+    "heroImgAlt": "Strategic Partnership Implementation"
+  },
+  "marketShift": {
+    "badge": "MARKET INTELLIGENCE",
+    "heading": "The Market Is Shifting",
+    "subheading": "From Tool Adoption to AI-Native Operations",
+    "body": "The enterprise landscape is undergoing a fundamental transition — and most service providers haven't repositioned yet.",
+    "diagramFrom": "Tools",
+    "diagramTo": "AI-Native Systems"
+  },
+  "problem": {
+    "marquee": "YESTERDAY'S MODEL & THE PROBLEM",
+    "heading": "Fragmented AI Adoption Is a Structural Risk",
+    "subtitle": "Most enterprises are experimenting with AI — but without a system to support it.",
+    "cards": [
+      {
+        "title": "Tool Fragmentation",
+        "body": "Multiple disconnected AI tools operating in silos — chatbots, automations, content systems — with no unifying architecture or governance layer."
+      },
+      {
+        "title": "Weak Internal Adoption",
+        "body": "Without structured enablement and workflow integration, AI tools are used inconsistently or abandoned. Technology investment fails to generate return."
+      },
+      {
+        "title": "No Operating Foundation",
+        "body": "No internal AI ownership, no prioritization framework, no compliance logic. Every new AI initiative starts from scratch."
+      }
+    ],
+    "bottomBar": "The result: multiple vendors, overlapping tools, duplicated costs, and an organization that is no closer to AI-native operations."
+  },
+  "solution": {
+    "badge": "TOMORROW'S STANDARD",
+    "heading": "AI-Enabled Operating Infrastructure",
+    "sub": "From isolated tools to a unified, enterprise-wide AI foundation."
+  },
+  "iceberg": {
+    "pillars": [
+      "Integrated Operating Layer",
+      "Cross-Department AI Coherence",
+      "Internal AI Governance",
+      "Scalable Implementation Model",
+      "Organizational AI Sovereignty"
+    ]
+  },
+  "valueProp": {
+    "s5": {
+      "badge": "STRATEGIC OPPORTUNITY",
+      "heading": "Why This Is Your Next High-Value Service Line",
+      "sub": "Your clients already need this. The question is whether you're the one who offers it — or your competitor.",
+      "cards": [
+        {
+          "title": "Immediate Market Demand",
+          "body": "Every enterprise you serve is already allocating budget toward AI. Most are doing it without structure. You can be the partner who brings order to that chaos."
+        },
+        {
+          "title": "Account Expansion Engine",
+          "body": "This service creates new revenue inside your existing client base — without requiring new business development. Every current account is a potential engagement."
+        },
+        {
+          "title": "First-Mover Advantage",
+          "body": "Most competitors are still selling point AI solutions. By offering a full AI Operating System capability, you position ahead of slower-moving firms."
+        }
+      ]
+    },
+    "s6": {
+      "badge": "STRATEGIC OPPORTUNITY",
+      "heading": "A New Enterprise Service Category — Ready for Your Clients",
+      "quote": "This is how you enter the AI transformation market — with a proven partner, a structured methodology, and immediate commercial upside.",
+      "tiles": [
+        {
+          "title": "Growing Demand",
+          "body": "Enterprise demand for operational AI infrastructure is accelerating. The window to lead this category is open — and narrowing."
+        },
+        {
+          "title": "High-Value Projects",
+          "body": "Typical client engagements run $100K–$150K. This is a premium transformation offer, not a commodity service."
+        },
+        {
+          "title": "Inside Your Accounts",
+          "body": "Your existing clients already need this. This service line expands wallet share within relationships you already hold."
+        },
+        {
+          "title": "No Build Required",
+          "body": "You bring client access and commercial positioning. We deliver the methodology, systems architecture, and implementation."
+        }
+      ]
+    },
+    "s7": {
+      "badge": "PARTNER VALUE PROPOSITION",
+      "headingLine1": "New Revenue. No Build Cost.",
+      "headingGold": "Immediate Market Entry.",
+      "sub": "Launch a premium AI transformation practice without building an internal team from scratch.",
+      "pillars": [
+        {
+          "title": "New Revenue",
+          "body": "Launch a premium AI practice that creates a new growth line for your firm."
+        },
+        {
+          "title": "No Build Cost",
+          "body": "Offer the capability without hiring, staffing, or assembling a team internally."
+        },
+        {
+          "title": "Immediate Market Entry",
+          "body": "Move quickly with a ready-to-deploy service that gets you into the market faster."
+        }
+      ],
+      "dashboardAlt": "AI Dashboard Meeting"
+    }
+  },
+  "aiPreview": {
+    "badge": "CORE CAPABILITY",
+    "heading": "WHAT IS AN AI OPERATING SYSTEM?",
+    "leadItalic": "The internal operating layer that governs how AI functions across your entire organization.",
+    "notTool": "Not a single tool. Not a software platform.",
+    "definition": "An AI Operating System is the structured framework that enables AI to function coherently across a business.",
+    "miniCards": [
+      "Operating Model Design",
+      "Workflow Automation",
+      "Governance & Compliance",
+      "Team Enablement",
+      "Use-Case Prioritization",
+      "Scalable Ownership"
+    ],
+    "learnMore": "Learn more about AI OS →",
+    "timingBadge": "MARKET TIMING",
+    "timingHeading": "Why This Opportunity Exists Now",
+    "timingSub": "The Market Window Is Open — and Competitive Pressure Is Intensifying",
+    "timingQuote": "\"The window between early adopter advantage and market expectation is closing. Partners who move now define the category. This convergence of pressures is generating the strongest market pull for AI transformation in history.\"",
+    "partnerBadge": "PARTNERSHIP FRAMEWORK",
+    "partnerLead": "We operate as your specialized execution partner — enabling you to launch a new AI transformation service line without building an internal delivery team from scratch.",
+    "yourFirm": "Your Firm",
+    "yourFirmLines": "Client Access<br/>Positioning<br/>Account Ownership",
+    "mq": "MagnaQore",
+    "mqLines": "Methodology<br/>System Architecture<br/>Implementation",
+    "seeModel": "See the full partnership model →"
+  },
+  "keyFactors": {
+    "mobile": [
+      {
+        "title": "Economic Pressure",
+        "body": "Cost reduction and operational efficiency are board-level mandates. AI is the lever."
+      },
+      {
+        "title": "Competitive Reality",
+        "body": "AI-enabled competitors are gaining speed. Firms that delay risk structural disadvantage."
+      },
+      {
+        "title": "Operational Urgency",
+        "body": "Organizations need to do more with existing teams. AI-native operations multiply capacity."
+      },
+      {
+        "title": "Workflow Modernization & Internal Resilience",
+        "body": "Enterprise workflows are overdue for redesign. AI provides the architecture for the next era.\n\nThey are reducing external dependencies and building internal operational capability."
+      }
+    ],
+    "centerLine1": "Key Success",
+    "centerLine2": "Factors",
+    "desktop": {
+      "economicTitle": "Economic Pressure",
+      "economicBody": "Cost reduction and operational efficiency are board-level mandates. AI is the lever.",
+      "operationalTitle": "Operational Urgency",
+      "operationalBody": "Organizations need to do more with existing teams. AI-native operations multiply capacity.",
+      "competitiveTitle": "Competitive Reality",
+      "competitiveBody": "AI-enabled competitors are gaining speed. Firms that delay risk structural disadvantage.",
+      "workflowTitleLine1": "Workflow Modernization &",
+      "workflowTitleLine2": "Internal Resilience",
+      "workflowBody1": "Enterprise workflows are overdue for redesign. AI provides the architecture for the next era.",
+      "workflowBody2": "They are reducing external dependencies and building internal operational capability."
+    }
+  },
+  "about": {
+    "badge": "ABOUT THE COMPANY",
+    "heading": "Applied AI. Built for Real Business Environments.",
+    "lead": "MagnaQore (USA) & BSU (QATAR) are an AI implementation and education companies combining strategy, training, AI systems design, and execution.",
+    "stats": [
+      {
+        "value": "200+",
+        "label": "Companies Consulted"
+      },
+      {
+        "value": "1,500+",
+        "label": "Professionals Trained"
+      },
+      {
+        "value": "10+",
+        "label": "Industries Served"
+      },
+      {
+        "value": "3",
+        "label": "Years of Execution"
+      }
+    ],
+    "cards": [
+      {
+        "title": "Award-Winning Recognition",
+        "body": "Our company was recognized as the best startup among thousands of participants at the Russian Venture Forum — a globally recognized innovation benchmark."
+      },
+      {
+        "title": "MagnaQore (USA) Operational Model",
+        "body": "MagnaQore operates as a real-world AI implementation laboratory — continuously testing, building, and validating implementation approaches across live engagements. We bring that intelligence into every partnership."
+      },
+      {
+        "title": "Sector Expertise Across",
+        "body": "Healthcare · Real Estate · Logistics · Retail · IT · EdTech · E-Commerce · Gaming"
+      }
+    ]
+  },
+  "proof": {
+    "badge": "PROOF OF WORK",
+    "heading": "Delivered. Measured. Repeatable.",
+    "sub": "Client engagements across sectors, geographies, and organizational stages.",
+    "viewAll": "View Full Case Studies →",
+    "clientPrefix": "Client:"
+  },
+  "team": {
+    "badge": "EXPERTISE & LEADERSHIP",
+    "heading": "The MagnaQore Team",
+    "sub": "Architects of intelligent transformation."
+  },
+  "cta": {
+    "heading": "Ready to Lead the Next Wave?",
+    "body": "Let's discuss how this partnership creates value for your firm and your clients.",
+    "button": "Schedule a Conversation"
+  },
+  "readNext": {
+    "label": "Read Next",
+    "link": "AI Operating System"
+  },
+  "teamMembers": {
+    "ina": {
+      "title": "Co-Founder & CEO",
+      "tags": "AI Transformation Director · International Speaker · Strategic Advisor",
+      "trustLine": "Trusted across: Government · Corporate · Startup · Education Institutions",
+      "highlights": [
+        {
+          "title": "1. Enterprise Advisory",
+          "bullets": [
+            "AI Trainer for Board Directors — DHL Qatar. First fully AI-literate Board in the country",
+            "200+ startups & companies consulted",
+            "Cross-sector: healthcare, logistics, retail, IT, edtech"
+          ]
+        },
+        {
+          "title": "2. Global Thought Leadership",
+          "bullets": [
+            "AI Expert — European Commission & EIC (with Deloitte)",
+            "AI Panel Discussion — Qatar",
+            "Moderator — Women in Tech",
+            "AI Expert Panelist — Gaming Industry"
+          ]
+        },
+        {
+          "title": "3. Education & Ecosystem",
+          "bullets": [
+            "AI Trainer — universities & schools",
+            "Kids AI Camp — DHL corporate families",
+            "Hackathon Mentor — QDB Scale7",
+            "AI Trends Workshop Leader"
+          ]
+        }
+      ]
+    },
+    "maryia": {
+      "title": "Co-Founder & CTPO",
+      "tags": "AI Systems & Delivery Lead · AI Program Architect",
+      "statLine": "1,500+ Students Trained · 20 AI Literacy Programs",
+      "highlights": [
+        {
+          "title": "1. Implementation & Maturity Expertise",
+          "bullets": [
+            "Trained 1,500+ students in AI applications across disciplines",
+            "Designed 20 AI high-literacy programs for enterprise and education"
+          ]
+        },
+        {
+          "title": "2. Academic & Institutional",
+          "bullets": [
+            "Mentor — Skolkovo Business School (Moscow)",
+            "AI in Business program — Russian Venture Forum"
+          ]
+        },
+        {
+          "title": "3. Government-Accredited Programs",
+          "bullets": [
+            "Russian Ministry of Education accredited AI program for 500+ students"
+          ]
+        },
+        {
+          "title": "4. Industry Training",
+          "bullets": [
+            "AI training for MAED — Russia's largest marketplace marketing academy"
+          ]
+        }
+      ]
+    },
+    "artyom": {
+      "title": "CTO / AI Architect",
+      "tags": "Enterprise AI systems architect",
+      "roleDescription": "Artyom leads the technical architecture and systems integration layer of our AI delivery model, with a focus on building enterprise-ready AI infrastructures that connect directly into real business operations.",
+      "highlights": [
+        {
+          "title": "1. Execution Track Record",
+          "bullets": [
+            "Contributed to the development of 300+ AI systems and automations",
+            "Built full-stack AI infrastructures across: Real Estate, Logistics, HR, E-commerce, EdTech, Service-based businesses",
+            "Delivered AI-powered solutions including: AI agents, CRM automations, Internal workflow systems, Telegram / WhatsApp / website chatbots, Document and operations intelligence tools"
+          ]
+        },
+        {
+          "title": "2. Technical Capability",
+          "bullets": [
+            "AI & LLM Systems: LLM-powered workflows and integrations, AI agents and multi-agent orchestration, Prompt architecture and instruction design, Retrieval-Augmented Generation (RAG) systems, Semantic search and vector database implementation, AI quality monitoring and system observability",
+            "Systems & Infrastructure: API architecture, webhooks, and authentication, Data pipelines, ETL, and transformation logic, SQL / NoSQL database structures, Cloud deployment environments (AWS, Azure, Google Cloud), Real-time and batch processing workflows, Middleware and system interoperability, CRM platforms including Salesforce, HubSpot, and Microsoft Dynamics",
+            "Integration & Tools: Integration environments: N8N, Make, Zapier, Directus, Cursor, Lovable, Antigravity, and other AI implementation frameworks. Working familiarity with enterprise systems: SAP, Oracle, and NetSuite. Security, compliance, and operational deployment considerations for enterprise environments."
+          ]
+        }
+      ]
+    }
+  }
+}

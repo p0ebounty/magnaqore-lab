@@ -1,0 +1,30 @@
+{
+  "brand": {
+    "name": "MagnaQore",
+    "logoAlt": "MagnaQore"
+  },
+  "nav": {
+    "aiOperatingSystem": "AI-операционная система",
+    "partnership": "Партнёрство",
+    "caseStudies": "Кейсы"
+  },
+  "cta": {
+    "partnerWithUs": "Стать партнёром"
+  },
+  "footer": {
+    "tagline": "Компания по внедрению и трансформации с помощью ИИ",
+    "capabilities": "Возможности",
+    "model": "Модель",
+    "experience": "Опыт",
+    "copyright": "© {{year}} MagnaQore USA. Только для стратегических партнёров."
+  },
+  "lang": {
+    "ariaLabel": "Язык",
+    "optionEn": "English",
+    "optionRu": "Русский"
+  },
+  "a11y": {
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню"
+  }
+}

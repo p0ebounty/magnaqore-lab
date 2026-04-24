@@ -1,0 +1,75 @@
+{
+  "seo": {
+    "title": "AI Operating System | MagnaQore",
+    "description": "Discover the AI Operating System: a structured framework enabling AI to function coherently across your entire business operations."
+  },
+  "hero": {
+    "badge": "CORE CAPABILITY",
+    "titleBefore": "What Is an",
+    "titleAccent": "AI Operating System",
+    "titleAfter": "?",
+    "subtitle": "Not a single tool. Not a software platform.",
+    "lead": "An AI Operating System is the structured framework that enables AI to function coherently across a business."
+  },
+  "pillars": [
+    { "title": "Operating Model Design", "desc": "Strategic framework for how AI is governed, deployed, and scaled within the organization." },
+    { "title": "Department Integration", "desc": "AI embedded into workflows per business unit — not as an add-on, but as operational infrastructure." },
+    { "title": "Workflow Architecture", "desc": "Automation logic designed around actual business processes, not generic templates." },
+    { "title": "Governance Logic", "desc": "Policies, oversight, and accountability structures for responsible, scalable AI usage." },
+    { "title": "Use-Case Prioritization", "desc": "Evidence-based selection of highest-impact AI applications/initiatives for each organization." },
+    { "title": "Team Enablement", "desc": "Capability-building programs that create internal AI literacy and operational competence." },
+    { "title": "Process Redesign", "desc": "Re-engineer workflows to unlock AI-native efficiency, not just bolt-on automation." },
+    { "title": "Implementation Roadmaps", "desc": "Phased deployment plans with clear milestones, KPIs, and scaling criteria." }
+  ],
+  "portfolio": {
+    "badge": "SERVICE PORTFOLIO EXPANSION",
+    "heading": "What You Can Offer Your Clients Through This Partnership",
+    "sub": "Position your firm as a strategic AI transformation partner — not just an IT or consulting provider.",
+    "rolesLead": "Your clients see you as:",
+    "roles": ["AI Transformation Partner", "AI Systems Architect", "AI Capability Builder"],
+    "services": [
+      { "num": "1", "title": "AI Operating Model Design", "desc": "Help clients architect the internal system that makes AI operationally coherent across their business." },
+      { "num": "2", "title": "AI Governance & Compliance", "desc": "Deploy structured oversight frameworks that enable responsible, auditable AI usage at enterprise scale." },
+      { "num": "3", "title": "Department-Level AI Integration", "desc": "Move beyond pilots — Embed AI into operational workflows across sales, operations, HR, finance, and marketing." },
+      { "num": "4", "title": "AI Capability Building", "desc": "Develop internal AI literacy from board level to operational teams — enabling sustainable internal ownership." },
+      { "num": "5", "title": "Process Redesign for AI", "desc": "Re-engineer workflows to be AI-native, unlocking automation, efficiency, and performance at their core." },
+      { "num": "6", "title": "AI Implementation Roadmaps", "desc": "Provide clients with phased, milestone-driven deployment plans aligned to business priorities and maturity levels." }
+    ]
+  },
+  "delivery": {
+    "badge": "DELIVERY MODEL",
+    "heading": "A Repeatable Enterprise Implementation Model",
+    "steps": [
+      { "id": "01", "title": "Opportunity Identification", "desc": "Partner identifies or opens a relevant client opportunity within their existing account base." },
+      { "id": "02", "title": "Joint Discovery", "desc": "Joint qualification conversation — evaluating AI readiness, business context, and transformation potential." },
+      { "id": "03", "title": "Business Diagnosis", "desc": "Structured AI opportunity mapping: gaps, priorities, department readiness, and implementation complexity." },
+      { "id": "04", "title": "Tailored Proposal", "desc": "Custom scope and transformation proposal developed. Separate project agreement signed for that engagement." },
+      { "id": "05", "title": "AI OS Design & Implementation", "desc": "AI Operating System architecture, workflow design, governance logic, and rollout — delivered by MagnaQore." },
+      { "id": "06", "title": "Enablement & Optimization", "desc": "Team training, adoption support, and ongoing optimization to ensure sustainable internal ownership." }
+    ]
+  },
+  "advantage": {
+    "badge": "THE MAGNAQORE DIFFERENCE",
+    "heading": "Why the Systems Approach Wins",
+    "sub": "Moving beyond fragmented tooling prevents scaling failures and creates lasting enterprise value.",
+    "bullets": [
+      "Systemic Approach vs Single Tools",
+      "Methodology-Driven Implementation",
+      "Real-World Laboratory Tested",
+      "Built for Organizational Scale",
+      "Immediate Speed to Market"
+    ],
+    "chart": {
+      "fragmentedLabel": "Point Tools (Fragmented)",
+      "fragmentedValue": "Low Impact",
+      "customLabel": "Custom Build (Expensive/Slow)",
+      "customValue": "High Risk",
+      "aosLabel": "AI Operating System",
+      "aosValue": "Maximized ROI"
+    }
+  },
+  "readNext": {
+    "label": "Read Next",
+    "link": "Partnership Framework"
+  }
+}

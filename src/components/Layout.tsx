@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import styles from './Layout.module.css';
@@ -6,18 +7,20 @@ import logo from '../assets/logo.png';
 import CustomCursor from './CustomCursor';
 import MagneticButton from './MagneticButton';
 import ContactModal from './ContactModal';
+import LanguageSwitcher from './LanguageSwitcher';
 import { useContactModal } from '../context/ContactContext';
 
 const navLinks = [
-  { name: 'AI Operating System', path: '/ai-operating-system' },
-  { name: 'Partnership', path: '/partnership' },
-  { name: 'Case Studies', path: '/case-studies' },
-];
+  { labelKey: 'nav.aiOperatingSystem', path: '/ai-operating-system' },
+  { labelKey: 'nav.partnership', path: '/partnership' },
+  { labelKey: 'nav.caseStudies', path: '/case-studies' },
+] as const;
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
   const { openContactModal } = useContactModal();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -35,8 +38,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
           <Link to="/" className={styles.logo} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img src={logo} alt="MagnaQore" style={{ height: '36px', width: 'auto', display: 'block' }} />
-            MagnaQore
+            <img src={logo} alt={t('brand.logoAlt')} style={{ height: '36px', width: 'auto', display: 'block' }} />
+            {t('brand.name')}
           </Link>
 
           <nav className={styles.desktopNav}>
@@ -46,22 +49,29 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 to={link.path}
                 className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
               >
-                {link.name}
+                {t(link.labelKey)}
               </Link>
             ))}
             <MagneticButton>
               <button onClick={openContactModal} className="btn-primary" style={{ fontFamily: 'inherit', fontSize: 'inherit' }}>
-                Partner With Us
+                {t('cta.partnerWithUs')}
               </button>
             </MagneticButton>
           </nav>
 
           <button
+            type="button"
             className={styles.mobileMenuBtn}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? t('a11y.closeMenu') : t('a11y.openMenu')}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
+        </div>
+
+        <div className={styles.langDesktop}>
+          <LanguageSwitcher variant="segment" />
         </div>
 
         {/* Mobile menu */}
@@ -74,15 +84,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className={styles.mobileNavLink}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {link.name}
+                {t(link.labelKey)}
               </Link>
             ))}
+            <div className={styles.mobileLangBlock}>
+              <LanguageSwitcher variant="select" />
+            </div>
             <button
+              type="button"
               onClick={() => { setIsMenuOpen(false); openContactModal(); }}
               className={styles.mobileNavLinkGold}
               style={{ textAlign: 'left', width: '100%', fontFamily: 'inherit' }}
             >
-              Partner With Us
+              {t('cta.partnerWithUs')}
             </button>
           </div>
         )}
@@ -95,17 +109,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className={styles.footer}>
         <div className={`container ${styles.footerContainer}`}>
           <div className={styles.footerBrand}>
-            <h3>MagnaQore</h3>
-            <p>AI Implementation & Transformation Company</p>
+            <h3>{t('brand.name')}</h3>
+            <p>{t('footer.tagline')}</p>
           </div>
           <div className={styles.footerLinks}>
-            <Link to="/ai-operating-system">Capabilities</Link>
-            <Link to="/partnership">Model</Link>
-            <Link to="/case-studies">Experience</Link>
+            <Link to="/ai-operating-system">{t('footer.capabilities')}</Link>
+            <Link to="/partnership">{t('footer.model')}</Link>
+            <Link to="/case-studies">{t('footer.experience')}</Link>
           </div>
         </div>
         <div className={`container ${styles.copyright}`}>
-          <p>© {new Date().getFullYear()} MagnaQore USA. Strategic Partners Only.</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </footer>
     </div>

@@ -3,7 +3,10 @@
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  /* clip marquee track + glow; flex child .container uses min-w-0 so width can shrink */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  max-width: 100%;
   padding-top: 80px;
   background-image: linear-gradient(to bottom, rgba(10, 15, 20, 0.6) 0%, var(--bg-dark) 100%), url('/images/hero-bg-wide.png');
   background-size: cover;
@@ -32,23 +35,100 @@
 }
 
 .heroTitle {
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.1;
+  font-size: clamp(1.35rem, 2.2vw + 0.85rem, 3.15rem);
+  line-height: 1.14;
   margin-bottom: var(--space-4);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-wrap: balance;
+}
+
+/* Hero H1: stronger floor on phones (previous clamp read ~1.3rem on typical widths) */
+@media (max-width: 767px) {
+  .heroTitle {
+    font-size: clamp(1.75rem, 1.05rem + 4.5vw, 2.7rem);
+    line-height: 1.12;
+  }
+}
+
+@media (min-width: 900px) {
+  .heroTitle {
+    font-size: clamp(1.5rem, 2.5vw + 0.6rem, 3.5rem);
+  }
 }
 
 .heroSubtitle {
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: clamp(0.95rem, 1.35vw + 0.55rem, 1.65rem);
   color: var(--text-secondary);
   font-weight: 300;
   margin-bottom: var(--space-6);
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  text-wrap: balance;
 }
 
 .heroBody {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.1rem + 0.35vw, 1.25rem);
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto var(--space-8);
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+}
+
+/*
+ * Marquee pill: on narrow viewports use index.css (animated track). From 768px up, "static"
+ * wrapping so long RU/EN fits in the column — do not set animation:none outside this query
+ * or it can block the global marquee on phones (cascade / transform interaction).
+ */
+@media (min-width: 768px) {
+  :global(.badge.marquee-badge).staticMarquee {
+    max-width: 100%;
+    width: fit-content;
+    align-self: flex-start;
+    white-space: normal;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .staticMarquee :global(.marquee-content) {
+    animation: none;
+    transform: none;
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.25rem 0.75rem;
+  }
+
+  .staticMarquee :global(.marquee-text) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+    line-height: 1.4;
+    font-size: clamp(0.52rem, 1.35vw + 0.22rem, 0.72rem);
+    letter-spacing: 0.05em;
+  }
+
+  .staticMarquee.staticMarqueeCenter {
+    align-self: center;
+  }
+
+  .staticMarquee.staticMarqueeCenter :global(.marquee-content) {
+    justify-content: center;
+  }
+
+  .staticMarquee :global(.marquee-separator) {
+    display: none;
+  }
+
+  .staticMarquee :global(.marquee-content > span:nth-child(n + 2)) {
+    display: none;
+  }
 }
 
 .confidentialText {

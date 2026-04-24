@@ -1,0 +1,24 @@
+{
+  "closeAria": "Закрыть окно",
+  "title": "Стать партнёром",
+  "subtitleLead": "Напишите нам напрямую на",
+  "successTitle": "Сообщение отправлено!",
+  "successBody": "Спасибо за обращение. Мы скоро свяжемся с вами, чтобы обсудить трансформацию с помощью ИИ.",
+  "errors": {
+    "nameRequired": "Введите полное имя",
+    "emailRequired": "Введите рабочий email",
+    "emailInvalid": "Введите корректный адрес email",
+    "companyRequired": "Введите компанию / организацию"
+  },
+  "form": {
+    "nameLabel": "Полное имя",
+    "namePlaceholder": "Иван Иванов",
+    "emailLabel": "Рабочий email",
+    "emailPlaceholder": "ivan@company.com",
+    "companyLabel": "Компания / организация",
+    "companyPlaceholder": "ООО «Компания»",
+    "messageLabel": "Сообщение (необязательно)",
+    "messagePlaceholder": "Чем мы можем помочь?",
+    "submit": "Отправить сообщение"
+  }
+}

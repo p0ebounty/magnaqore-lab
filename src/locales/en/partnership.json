@@ -1,0 +1,99 @@
+{
+  "seo": {
+    "title": "Partnership Framework | MagnaQore",
+    "description": "Strategic revenue participation model. Partner with MagnaQore to launch a new AI transformation service line without building an internal team."
+  },
+  "hero": {
+    "badge": "PARTNERSHIP FRAMEWORK",
+    "titleBefore": "Strategic",
+    "titleAccent": "Revenue",
+    "titleAfter": "Participation",
+    "lead": "We operate as your specialized execution partner — enabling you to launch a new AI transformation service line without building an internal delivery team."
+  },
+  "framework": {
+    "badge": "THE FRAMEWORK",
+    "heading": "How We Work Together",
+    "sub": "A seamless integration of your market presence and our technical execution.",
+    "youLabel": "YOU",
+    "youItems": ["Client access", "Commercial positioning", "Account ownership"],
+    "integration": "Seamless Integration",
+    "mqItems": ["Methodology", "Systems architecture", "Implementation", "Delivery team"]
+  },
+  "commercial": {
+    "badge": "COMMERCIAL FRAMEWORK",
+    "heading": "Strategic Revenue Participation Model",
+    "sub": "A premium, high-value commercial structure designed for enterprise partnerships.",
+    "engagementLabel": "Typical Client Engagement Value",
+    "engagementRange": "$100,000 – $250,000",
+    "usd": "USD",
+    "perEngagement": "per client engagement",
+    "partnerShareTitle": "Partner Commercial Participation",
+    "partnerShareRange": "25% – 30%",
+    "perProject": "per closed client project",
+    "partnerShareNote": "This is a strategic revenue participation model — not a referral arrangement.",
+    "benefitsTitle": "Commercial Structure Benefits",
+    "benefitBullets": [
+      "Separate project agreement per engagement",
+      "Clear scope, deliverables & legal clarity",
+      "Tailored pricing by client size and complexity",
+      "No capability build required to participate",
+      "Scalable — repeatable across your client base"
+    ],
+    "quote": "\"One closed project generates $25K–$75K in partner revenue. Two to three engagements per year represents a meaningful new consulting income stream.\""
+  },
+  "why": {
+    "badge": "WHY THIS WINS FOR YOU",
+    "heading": "Partnership Benefits Summary",
+    "cards": [
+      {
+        "title": "No Hiring Risk",
+        "desc": "Expand your service portfolio instantly without the overhead, recruitment delay, or risk of hiring specialized AI talent internally."
+      },
+      {
+        "title": "Premium Brand Positioning",
+        "desc": "Go to market with an enterprise-grade AI Operating System offering, elevating your firm above generic prompt-engineering consultants."
+      },
+      {
+        "title": "Immediate Capability",
+        "desc": "Start offering AI transformation to your clients this quarter with a proven, structured methodology already prepared for you."
+      },
+      {
+        "title": "Complete Fulfillment",
+        "desc": "We handle the technical complexity — architecture, engineering, training, and deployment — allowing you to focus on account management."
+      }
+    ]
+  },
+  "revenue": {
+    "badge": "REVENUE UPSIDE",
+    "heading": "Revenue Projection (Annualized)",
+    "sub": "Modeled on average enterprise engagement values and typical partner participation rates.",
+    "colVolume": "Volume",
+    "colDealValue": "Total Deal Value (Est.)",
+    "colPartnerShare": "Partner Share (25% - 30%)",
+    "mobileVolume": "Partner Volume",
+    "rows": [
+      {
+        "deals": "1 Client Project",
+        "context": "High-leverage addition to an existing client relationship.",
+        "value": "$100K – $250K",
+        "share": "$25,000 – $75,000"
+      },
+      {
+        "deals": "3 Client Projects",
+        "context": "Meaningful new service line revenue.",
+        "value": "$300K – $750K",
+        "share": "$75,000 – $225,000"
+      },
+      {
+        "deals": "5 Client Projects",
+        "context": "Established AI delivery practice.",
+        "value": "$500K – $1.25M",
+        "share": "$125,000 – $375,000"
+      }
+    ]
+  },
+  "readNext": {
+    "label": "Read Next",
+    "link": "Projects & Delivery Experience"
+  }
+}
