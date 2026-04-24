@@ -1,0 +1,12 @@
+/* Flagship card: was 3rem inline — on phones wider than grid cards (2rem). Beat index `.glass-panel` mobile padding. */
+:global(.glass-panel).flagshipCard {
+  margin-bottom: 4rem;
+  border-top: 4px solid var(--accent-gold);
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  :global(.glass-panel).flagshipCard {
+    padding: 3rem;
+  }
+}

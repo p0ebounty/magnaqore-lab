@@ -4,6 +4,7 @@ import { GraduationCap, Mic, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
+import caseStyles from './CaseStudies.module.css';
 import { caseStudies, teamMembers, credibilityHighlights } from '../data/content';
 
 type CredibilityBullet = {
@@ -72,7 +73,7 @@ export default function CaseStudies() {
         <div className="container">
 
           {flagship && (
-            <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', marginBottom: '4rem', borderTop: '4px solid var(--accent-gold)' }}>
+            <div className={`glass-panel reveal ${caseStyles.flagshipCard}`} ref={reveal}>
               <span className="badge">{t(`cases.${flagship.id}.tag`)}</span>
               <h2 style={{ fontSize: 'clamp(1.8rem, 6vw, 3rem)', margin: '1rem 0', lineHeight: 1.1 }}>{t(`cases.${flagship.id}.title`)}</h2>
               <p className="text-gold" style={{ letterSpacing: '2px', marginBottom: '2rem' }}>

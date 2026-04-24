@@ -4,6 +4,7 @@ import { ArrowRightLeft, ShieldCheck, Diamond, Zap, CheckCircle2, ArrowRight } f
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
+import pw from './Partnership.module.css';
 import logo from '../assets/logo.png';
 
 export default function Partnership() {
@@ -75,9 +76,9 @@ export default function Partnership() {
             </p>
           </div>
 
-          <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', position: 'relative', overflow: 'hidden' }}>
+          <div className={`glass-panel reveal ${pw.frameworkPanel}`} ref={reveal}>
             <div className="grid md:grid-cols-3 gap-8 items-center text-center relative z-10">
-              <div style={{ padding: '2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--border-light)' }}>
+              <div className={pw.frameworkCol}>
                 <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
                   <span style={{ fontSize: '1.5rem', fontWeight: 700 }}>{t('framework.youLabel')}</span>
                 </div>
@@ -95,7 +96,7 @@ export default function Partnership() {
                 <ArrowRightLeft size={32} className="text-muted" />
               </div>
 
-              <div style={{ padding: '2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid var(--accent-gold)' }}>
+              <div className={pw.frameworkColMq}>
                 <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(223, 172, 94, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
                   <img src={logo} alt={tc('brand.logoAlt')} style={{ width: '32px', height: 'auto', display: 'block' }} />
                 </div>
@@ -120,7 +121,7 @@ export default function Partnership() {
             </p>
           </div>
 
-          <div className="glass-panel" style={{ padding: '4rem 2rem', borderTop: '4px solid var(--accent-gold)', marginBottom: '4rem' }}>
+          <div className={`glass-panel ${pw.commercialStat}`}>
             <p className="text-secondary" style={{ letterSpacing: '2px', textTransform: 'uppercase' }}>{t('commercial.engagementLabel')}</p>
             <h2 style={{ fontSize: 'clamp(3rem, 5vw, 5rem)', color: 'var(--accent-amber)', margin: '1rem 0' }}>
               {t('commercial.engagementRange')}
@@ -130,7 +131,7 @@ export default function Partnership() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 text-left">
-            <div className="glass-panel" style={{ padding: '3rem' }}>
+            <div className={`glass-panel ${pw.commercialCard}`}>
               <h3 className="text-gold">{t('commercial.partnerShareTitle')}</h3>
               <h2 style={{ fontSize: '4rem', color: 'var(--text-primary)', margin: '1rem 0' }}>{t('commercial.partnerShareRange')}</h2>
               <p className="text-secondary">{t('commercial.perProject')}</p>
@@ -139,7 +140,7 @@ export default function Partnership() {
               </p>
             </div>
 
-            <div className="glass-panel" style={{ padding: '3rem' }}>
+            <div className={`glass-panel ${pw.commercialCard}`}>
               <h3 className="text-gold" style={{ textAlign: 'center' }}>{t('commercial.benefitsTitle')}</h3>
               <ul style={{ listStyle: 'none', padding: 0, marginTop: '2rem', color: 'var(--text-secondary)', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {benefitBullets.map((text, idx) => (
@@ -168,7 +169,7 @@ export default function Partnership() {
             {whyCards.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="glass-panel reveal" ref={reveal} style={{ padding: '2.5rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div key={idx} className={`glass-panel reveal ${pw.whyCard}`} ref={reveal}>
                   <div style={{ background: 'rgba(223,172,94,0.1)', padding: '1rem', borderRadius: '12px', flexShrink: 0, width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Icon size={28} color="var(--accent-gold)" />
                   </div>
