@@ -17,11 +17,25 @@ const navLinks = [
   { labelKey: 'nav.caseStudies', path: '/case-studies' },
 ] as const;
 
+const footerLinks = [
+  { labelKey: 'footer.capabilities', path: '/ai-operating-system' },
+  { labelKey: 'footer.model', path: '/partnership' },
+  { labelKey: 'footer.clients', path: '/clients' },
+  { labelKey: 'footer.experience', path: '/case-studies' },
+] as const;
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
   const { openContactModal } = useContactModal();
   const { t } = useTranslation();
+  const hideNavigationLinks = location.pathname === '/clients';
+  const visibleFooterLinks = location.pathname === '/clients'
+    ? footerLinks.filter(link => link.path === '/case-studies')
+    : location.pathname === '/case-studies'
+      ? footerLinks.filter(link => link.path === '/clients')
+      : footerLinks;
+  const isClientsPage = location.pathname === '/clients';
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -44,19 +58,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           <nav className={styles.desktopNav}>
-            {navLinks.map(link => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
-              >
-                {t(link.labelKey)}
-              </Link>
-            ))}
+            {!hideNavigationLinks
+              ? navLinks.map(link => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
+                >
+                  {t(link.labelKey)}
+                </Link>
+              ))
+              : null}
             <MagneticButton>
-              <button onClick={openContactModal} className="btn-primary" style={{ fontFamily: 'inherit', fontSize: 'inherit' }}>
-                {t('cta.partnerWithUs')}
-              </button>
+              {isClientsPage ? (
+                <a
+                  href="https://cal.com/ina.nistoras/consultation"
+                  className="btn-primary"
+                  style={{ fontFamily: 'inherit', fontSize: 'inherit' }}
+                >
+                  Book Call
+                </a>
+              ) : (
+                <button onClick={openContactModal} className="btn-primary" style={{ fontFamily: 'inherit', fontSize: 'inherit' }}>
+                  {t('cta.partnerWithUs')}
+                </button>
+              )}
             </MagneticButton>
           </nav>
 
@@ -74,23 +100,32 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className={styles.mobileNav}>
-            {navLinks.map(link => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={styles.mobileNavLink}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t(link.labelKey)}
-              </Link>
-            ))}
+            {!hideNavigationLinks
+              ? navLinks.map(link => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={styles.mobileNavLink}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t(link.labelKey)}
+                </Link>
+              ))
+              : null}
             <button
               type="button"
-              onClick={() => { setIsMenuOpen(false); openContactModal(); }}
+              onClick={() => {
+                setIsMenuOpen(false);
+                if (isClientsPage) {
+                  window.location.href = 'https://cal.com/ina.nistoras/consultation';
+                  return;
+                }
+                openContactModal();
+              }}
               className={styles.mobileNavLinkGold}
               style={{ textAlign: 'left', width: '100%', fontFamily: 'inherit' }}
             >
-              {t('cta.partnerWithUs')}
+              {isClientsPage ? 'Book Call' : t('cta.partnerWithUs')}
             </button>
           </div>
         )}
@@ -107,10 +142,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <p>{t('footer.tagline')}</p>
           </div>
           <div className={styles.footerLinks}>
-            <Link to="/ai-operating-system">{t('footer.capabilities')}</Link>
-            <Link to="/partnership">{t('footer.model')}</Link>
-            <Link to="/clients">{t('footer.clients')}</Link>
-            <Link to="/case-studies">{t('footer.experience')}</Link>
+            {visibleFooterLinks.map(link => (
+              <Link key={link.path} to={link.path}>{t(link.labelKey)}</Link>
+            ))}
           </div>
         </div>
         <div className={`container ${styles.copyright}`}>
