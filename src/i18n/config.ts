@@ -13,6 +13,8 @@ import enCaseStudies from '../locales/en/caseStudies.json';
 import ruCaseStudies from '../locales/ru/caseStudies.json';
 import enLanding from '../locales/en/landing.json';
 import ruLanding from '../locales/ru/landing.json';
+import enClients from '../locales/en/clients.json';
+import ruClients from '../locales/ru/clients.json';
 
 export const SUPPORTED_LANGUAGES = ['en', 'ru'] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
@@ -38,6 +40,7 @@ void i18n
         aiOperatingSystem: enAiOperatingSystem,
         caseStudies: enCaseStudies,
         landing: enLanding,
+        clients: enClients,
       },
       ru: {
         common: ruCommon,
@@ -46,12 +49,13 @@ void i18n
         aiOperatingSystem: ruAiOperatingSystem,
         caseStudies: ruCaseStudies,
         landing: ruLanding,
+        clients: ruClients,
       },
     },
     fallbackLng: 'en',
     supportedLngs: [...SUPPORTED_LANGUAGES],
     defaultNS: 'common',
-    ns: ['common', 'contact', 'partnership', 'aiOperatingSystem', 'caseStudies', 'landing'],
+    ns: ['common', 'contact', 'partnership', 'aiOperatingSystem', 'caseStudies', 'landing', 'clients'],
     interpolation: {
       escapeValue: false,
     },

@@ -45,8 +45,6 @@ export default function LanguageSwitcher() {
 
   useEffect(() => {
     if (!open) return;
-    markFabIntroSeen();
-    setPulseIntro(false);
     const onDoc = (e: MouseEvent) => {
       if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
         setOpen(false);
@@ -63,9 +61,22 @@ export default function LanguageSwitcher() {
     };
   }, [open]);
 
+  const toggleMenu = () => {
+    const nextOpen = !open;
+    if (nextOpen) {
+      markFabIntroSeen();
+      setPulseIntro(false);
+    }
+    setOpen(nextOpen);
+  };
+
   const select = (code: SupportedLanguage) => {
-    void i18n.changeLanguage(code);
     setOpen(false);
+    if (code === current) return;
+
+    void i18n.changeLanguage(code).then(() => {
+      window.location.reload();
+    });
   };
 
   return (
@@ -101,7 +112,7 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         className={`${styles.fab} ${open ? styles.fabOpen : ''} ${pulseIntro && !open ? styles.fabPulseIntro : ''}`}
-        onClick={() => setOpen(v => !v)}
+        onClick={toggleMenu}
         aria-expanded={open}
         aria-haspopup="menu"
         aria-controls={open ? menuId : undefined}

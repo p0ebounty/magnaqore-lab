@@ -6,6 +6,7 @@
   "nav": {
     "aiOperatingSystem": "AI-операционная система",
     "partnership": "Партнёрство",
+    "clients": "Клиентам",
     "caseStudies": "Кейсы"
   },
   "cta": {
@@ -15,6 +16,7 @@
     "tagline": "Компания по внедрению и трансформации с помощью ИИ",
     "capabilities": "Возможности",
     "model": "Модель",
+    "clients": "Клиентам",
     "experience": "Опыт",
     "copyright": "© {{year}} MagnaQore USA. Только для стратегических партнёров."
   },

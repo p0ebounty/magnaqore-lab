@@ -6,6 +6,7 @@
   "nav": {
     "aiOperatingSystem": "AI Operating System",
     "partnership": "Partnership",
+    "clients": "Clients",
     "caseStudies": "Case Studies"
   },
   "cta": {
@@ -15,6 +16,7 @@
     "tagline": "AI Implementation & Transformation Company",
     "capabilities": "Capabilities",
     "model": "Model",
+    "clients": "Clients",
     "experience": "Experience",
     "copyright": "© {{year}} MagnaQore USA. Strategic Partners Only."
   },

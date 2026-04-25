@@ -1,0 +1,261 @@
+{
+  "seo": {
+    "title": "AI Operating System for Clients | MagnaQore",
+    "description": "Build an AI Operating System for your organization: governance, workflow architecture, adoption, and measurable AI implementation across departments."
+  },
+  "hero": {
+    "badge": "AI Operating System · Enterprise Implementation",
+    "titleBefore": "Your AI spend is",
+    "titleAccent": "leaking.",
+    "titleAfter": "We stop the bleed.",
+    "lead": "Most enterprise AI pilots fail not because of the models, but because there is no operating system underneath them. MagnaQore builds the infrastructure that makes AI work coherently across the entire organization.",
+    "primaryCta": "Book Your Discovery Call",
+    "secondaryCta": "See client results",
+    "video": {
+      "aria": "YouTube video placeholder",
+      "placeholder": "YouTube explainer video",
+      "note": "Reserved for a short video explaining what an AI Operating System is."
+    },
+    "stats": [
+      { "value": "300%+", "label": "Year 1 ROI target on AI initiatives" },
+      { "value": "2-4 mo", "label": "Target payback period after launch" },
+      { "value": "85%+", "label": "Target team adoption across deployments" },
+      { "value": "$1M+", "label": "Annual value potential per engagement" }
+    ]
+  },
+  "problem": {
+    "badge": "The Real Problem",
+    "heading": "You are not failing at AI. You are failing at AI infrastructure.",
+    "sub": "Your organization has already spent on AI tools: licenses, pilots, chatbots, automation experiments. Yet ROI is unclear, adoption is low, and every new initiative starts from zero.",
+    "quote": "74% of enterprises plan to deploy agentic AI in the next 2 years, but only 1 in 5 have a mature governance model. This is not a nice-to-have problem. It is a compliance and operating risk.",
+    "cards": [
+      {
+        "title": "Tool Fragmentation",
+        "desc": "Disconnected AI tools operate in silos with no unifying architecture. The result is duplicated cost, competing vendors, and zero coherence."
+      },
+      {
+        "title": "Weak Internal Adoption",
+        "desc": "Without structured enablement and workflow integration, AI tools get used inconsistently and then abandoned."
+      },
+      {
+        "title": "No Operating Foundation",
+        "desc": "No internal AI ownership, no prioritization framework, no compliance logic. When agents touch CRM, finance, or operations, governance becomes urgent."
+      }
+    ]
+  },
+  "solution": {
+    "badge": "The Solution",
+    "heading": "Not another AI tool. An AI Operating System.",
+    "sub": "An AI OS is the structured framework that enables AI to function coherently across the business: governing how it is deployed, scaled, measured, and owned internally.",
+    "cards": [
+      {
+        "num": "01 / Operating Model",
+        "title": "AI Operating Model Design",
+        "desc": "A strategic blueprint for how AI is governed, deployed, and scaled within your organization, built around the actual business."
+      },
+      {
+        "num": "02 / Workflow",
+        "title": "Workflow Architecture",
+        "desc": "Automation logic designed around real business processes, not bolt-on automations layered over broken workflows."
+      },
+      {
+        "num": "03 / Governance",
+        "title": "Governance & Compliance",
+        "desc": "Policies, oversight, and accountability structures for responsible, auditable AI usage at enterprise scale."
+      },
+      {
+        "num": "04 / Integration",
+        "title": "Department-Level Integration",
+        "desc": "AI embedded across sales, operations, HR, finance, and marketing as core operational infrastructure."
+      },
+      {
+        "num": "05 / Enablement",
+        "title": "Team Capability Building",
+        "desc": "Teams become AI-native operators and system owners, not permanent users of external tools."
+      },
+      {
+        "num": "06 / Roadmap",
+        "title": "Implementation Roadmaps",
+        "desc": "Phased deployment plans with milestones, KPIs, and scaling criteria for highest-impact initiatives."
+      }
+    ]
+  },
+  "roi": {
+    "items": [
+      { "value": "12-15", "label": "AI solutions deployed in production in Year 1" },
+      { "value": "50%+", "label": "Routine tasks automated across departments" },
+      { "value": "20-40%", "label": "Productivity improvement in early-adopter units" },
+      { "value": "99.5%", "label": "Target uptime and reliability for deployed systems" },
+      { "value": "200+", "label": "Companies consulted across 10+ industries" }
+    ]
+  },
+  "proof": {
+    "badge": "Proof of Work",
+    "heading": "Delivered. Measured. Repeatable.",
+    "sub": "Client engagements across sectors, geographies, and organizational stages.",
+    "cards": [
+      {
+        "sector": "Logistics · Qatar",
+        "title": "Executive AI Capability Program",
+        "client": "DHL Express Qatar",
+        "body": "AI leadership training delivered to the DHL Qatar Board of Directors. AI communication content approved by CEO for rollout across Arabic-branch countries.",
+        "result": "First fully AI-literate Board of Directors in the country"
+      },
+      {
+        "sector": "Real Estate · UAE & Qatar",
+        "title": "AI Sales & Marketing Agents",
+        "client": "Expert Bridge · FG Realty · Signature Stay",
+        "body": "AI agents deployed for lead engagement, sales conversion, email and call automation, and marketing across UAE and Qatar.",
+        "result": "Full pipeline automation with measurable conversion uplift"
+      },
+      {
+        "sector": "Travel · GCC Market",
+        "title": "AI Sales Assistant",
+        "client": "Apis Journey",
+        "body": "AI assistant handled client communication, package upgrades, and conversion for Kazakhstan tours targeting the GCC market.",
+        "result": "$15,000 USD in sales generated in 7 days"
+      },
+      {
+        "sector": "Logistics · USA",
+        "title": "AI Operations System",
+        "client": "City Company",
+        "body": "Structured AI integration across sales and operational processes: emails, calls, customer communication, and workflow optimization.",
+        "result": "Full AI-assisted sales operations layer in production"
+      },
+      {
+        "sector": "FMCG · Morocco",
+        "title": "AI Training & Content System",
+        "client": "Philip Morris Distributors",
+        "body": "AI animation and training content created for each new product line launch and distributor onboarding at regional scale.",
+        "result": "Scalable AI-powered training across distributor networks"
+      },
+      {
+        "sector": "Cosmetics · Europe / GCC",
+        "title": "AI-Powered Market Entry",
+        "client": "La Brains",
+        "body": "AI-supported entry into the GCC market for a European cosmetic brand through acquisition support, localization, and regional expansion enablement.",
+        "result": "Successful GCC market activation without a local sales team"
+      }
+    ]
+  },
+  "journey": {
+    "badge": "The Journey",
+    "heading": "Five phases from fragmented tools to AI sovereignty.",
+    "sub": "A structured, time-bound path. Each phase has clear deliverables, milestones, and accountable outcomes.",
+    "steps": [
+      {
+        "phase": "Phase 01",
+        "time": "Weeks 1-2",
+        "title": "Audit & Discovery",
+        "desc": "Stakeholder interviews, process mapping, opportunity matrix, executive roadmap presentation, and feasibility validation.",
+        "output": "Executive-approved roadmap plus 3-4 quick wins scoped for 90-day delivery"
+      },
+      {
+        "phase": "Phase 02",
+        "time": "Weeks 2-4",
+        "title": "Literacy & Capability Building",
+        "desc": "Director-level AI workshop, AI champions network, department implementation guides, technical deep-dives, and mentoring.",
+        "output": "Trained leaders who identify opportunities independently plus first solution in beta"
+      },
+      {
+        "phase": "Phase 03",
+        "time": "Weeks 4-12",
+        "title": "Pilot & Validation",
+        "desc": "Build and deploy 2-3 quick wins with user acceptance testing, before-and-after metrics, and weekly ROI tracking.",
+        "output": "2-3 quick wins live in production with quantified ROI and team confidence"
+      },
+      {
+        "phase": "Phase 04",
+        "time": "Weeks 8-16",
+        "title": "Governance & Standardization",
+        "desc": "AI governance policy, compliance and ethics guidelines, technical standards library, and accountability infrastructure.",
+        "output": "Formal AI governance policy plus KPI monitoring dashboard"
+      },
+      {
+        "phase": "Phase 05",
+        "time": "Month 4+",
+        "title": "Scale & Continuous Improvement",
+        "desc": "Maintain and optimize deployed solutions, scale successful pilots, build bigger initiatives, and report executive ROI.",
+        "output": "12-15 solutions deployed with compounding annual ROI"
+      }
+    ]
+  },
+  "engagement": {
+    "badge": "Commercial Structure",
+    "heading": "Transparent scope. No open-ended retainers.",
+    "sub": "Every engagement begins with a structured business diagnosis, so the scope is calibrated to your organization's needs and readiness before a proposal is signed.",
+    "items": [
+      {
+        "title": "Separate project agreement per engagement",
+        "desc": "Clear scope, deliverables, and contractual clarity from day one."
+      },
+      {
+        "title": "Phased payment aligned to milestones",
+        "desc": "Commercial accountability follows delivery progress and agreed outcomes."
+      },
+      {
+        "title": "Tailored proposal based on diagnostic findings",
+        "desc": "Scope depends on departments involved, transformation depth, and governance complexity."
+      },
+      {
+        "title": "Defined scope only, no retainer dependency",
+        "desc": "The goal is to build internal capability and ownership, not permanent vendor dependency."
+      }
+    ]
+  },
+  "team": {
+    "badge": "The Delivery Team",
+    "heading": "We are not AI consultants. We are an AI Execution Lab.",
+    "sub": "Three years of testing, building, and validating what works across industries and organizational stages.",
+    "cards": [
+      {
+        "role": "AI Transformation Director",
+        "name": "Ina Nistoras",
+        "title": "International Speaker · Strategic Advisor",
+        "bio": "Enterprise-level AI implementation leader trusted across government, corporate, startup, and education institutions.",
+        "creds": [
+          "AI Expert — European Commission & EIC with Deloitte",
+          "AI Trainer — Boardroom Directors, DHL Qatar",
+          "200+ startups and companies consulted",
+          "Moderator — Women in Tech, Qatar"
+        ]
+      },
+      {
+        "role": "AI Systems & Delivery Lead",
+        "name": "Maryia Sakavets",
+        "title": "AI Systems Lead · Program Architect",
+        "bio": "Architect of 20+ AI literacy programs for enterprise and education, with 1,500+ students trained.",
+        "creds": [
+          "DHL Qatar Board — Professional Development Program",
+          "QDB Startup Hub M7 — Doha, Qatar",
+          "Ulster University Qatar — AI Program",
+          "Skolkovo Business School — Moscow"
+        ]
+      },
+      {
+        "role": "AI Architect · Systems & CRM Integration",
+        "name": "Artyom Malinouski",
+        "title": "Technical Architecture Lead",
+        "bio": "Enterprise AI systems architect responsible for designing, integrating, and deploying scalable AI infrastructures.",
+        "creds": [
+          "300+ AI systems and automations built",
+          "Real Estate, Logistics, HR, EdTech, E-Commerce",
+          "LLM workflows, AI agents, multi-agent orchestration",
+          "AWS, Azure, Google Cloud, Salesforce, HubSpot, N8N"
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "badge": "The Next Step",
+    "heading": "The organizations that build AI infrastructure now will define the category.",
+    "sub": "Start with a focused strategic conversation about your AI readiness, current tool landscape, and highest-value operating opportunities.",
+    "button": "Book Your Discovery Call",
+    "disclaimer": "30-minute strategic conversation · No sales pitch · Focused on your AI readiness",
+    "steps": [
+      { "num": "01", "label": "Discovery Call", "detail": "30 minutes, no obligation" },
+      { "num": "02", "label": "Business Diagnosis", "detail": "AI readiness assessment" },
+      { "num": "03", "label": "Tailored Proposal", "detail": "Scoped to your organization" }
+    ]
+  }
+}

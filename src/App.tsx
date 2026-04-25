@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import AiOperatingSystem from './pages/AiOperatingSystem';
 import Partnership from './pages/Partnership';
 import CaseStudies from './pages/CaseStudies';
+import Clients from './pages/Clients';
 import { ContactProvider } from './context/ContactContext';
 
 // Scroll to top on route change
@@ -29,6 +30,7 @@ function App() {
             <Route path="/ai-operating-system" element={<AiOperatingSystem />} />
             <Route path="/partnership" element={<Partnership />} />
             <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/clients" element={<Clients />} />
           </Routes>
         </Layout>
       </ContactProvider>

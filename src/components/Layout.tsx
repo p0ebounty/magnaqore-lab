@@ -13,6 +13,7 @@ import { useContactModal } from '../context/ContactContext';
 const navLinks = [
   { labelKey: 'nav.aiOperatingSystem', path: '/ai-operating-system' },
   { labelKey: 'nav.partnership', path: '/partnership' },
+  { labelKey: 'nav.clients', path: '/clients' },
   { labelKey: 'nav.caseStudies', path: '/case-studies' },
 ] as const;
 
@@ -108,6 +109,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className={styles.footerLinks}>
             <Link to="/ai-operating-system">{t('footer.capabilities')}</Link>
             <Link to="/partnership">{t('footer.model')}</Link>
+            <Link to="/clients">{t('footer.clients')}</Link>
             <Link to="/case-studies">{t('footer.experience')}</Link>
           </div>
         </div>
