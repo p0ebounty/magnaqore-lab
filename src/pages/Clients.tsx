@@ -70,6 +70,7 @@ export default function Clients() {
   const { openContactModal } = useContactModal();
   const reveal = useReveal();
 
+  const heroBadgeText = t('hero.badge');
   const heroStats = t('hero.stats', { returnObjects: true }) as { value: string; label: string }[];
   const painCards = t('problem.cards', { returnObjects: true }) as SimpleCard[];
   const solutionCards = t('solution.cards', { returnObjects: true }) as NumberedCard[];
@@ -92,7 +93,7 @@ export default function Clients() {
               <div className="marquee-content">
                 {marqueeRepeat.map((item) => (
                   <span key={item}>
-                    <span className="marquee-text">{t('hero.badge')}</span>
+                    <span className="marquee-text">{heroBadgeText}</span>
                     <span className="marquee-separator">•</span>
                   </span>
                 ))}

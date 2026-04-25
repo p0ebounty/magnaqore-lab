@@ -647,3 +647,25 @@
     flex-direction: column;
   }
 }
+
+@media (min-width: 768px) {
+  .heroBadge {
+    width: fit-content;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .heroBadge :global(.marquee-content) {
+    animation: none;
+    transform: none;
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+
+  .heroBadge :global(.marquee-separator),
+  .heroBadge :global(.marquee-content > span:nth-child(n + 2)) {
+    display: none;
+  }
+}
