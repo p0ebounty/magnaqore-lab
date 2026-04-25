@@ -114,6 +114,13 @@ button {
   padding: 0 var(--space-6);
 }
 
+@media (max-width: 767px) {
+  .container {
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+  }
+}
+
 .text-center { text-align: center; }
 .text-gold { color: var(--accent-gold); }
 .text-muted { color: var(--text-muted); }
@@ -130,6 +137,7 @@ button {
 .gap-4 { gap: var(--space-4); }
 .gap-6 { gap: var(--space-6); }
 .gap-8 { gap: var(--space-8); }
+.gap-12 { gap: var(--space-12); }
 
 .p-4 { padding: var(--space-4); }
 .p-6 { padding: var(--space-6); }
@@ -269,10 +277,10 @@ button {
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--space-12) 0;
+    padding: var(--space-16) 0;
   }
   .glass-panel {
-    padding: 1.5rem;
+    padding: 1.625rem 1.375rem;
   }
 }
 

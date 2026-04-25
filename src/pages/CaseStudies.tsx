@@ -56,9 +56,9 @@ export default function CaseStudies() {
         title={t('seo.title')}
         description={t('seo.description')}
       />
-      <section className={styles.hero} style={{ minHeight: '60vh', paddingBottom: '4rem' }}>
+      <section className={`${styles.hero} ${styles.heroInner}`} style={{ minHeight: '60vh', paddingBottom: '4rem' }}>
         <div className={`container ${styles.heroContent}`}>
-          <h1 className="animate-slide-up">
+          <h1 className={`animate-slide-up ${styles.heroTitle} ${styles.heroTitleBoost}`}>
             {t('hero.titleBefore')}{' '}
             <span className="text-gold">{t('hero.titleAccent')}</span>{' '}
             {t('hero.titleAfter')}
@@ -145,8 +145,8 @@ export default function CaseStudies() {
         <div className="container grid md:grid-cols-2" style={{ gap: '2rem' }}>
 
           {teamMembers.filter(m => m.id === 'ina' || m.id === 'maryia').map((member, idx) => (
-            <div key={member.id} className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', borderTop: '4px solid var(--accent-gold)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '2rem', gap: '1rem' }}>
+            <div key={member.id} className={`glass-panel reveal ${caseStyles.teamCredCard}`} ref={reveal}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: 'clamp(1.25rem, 4vw, 2rem)', gap: '1rem' }}>
                 {idx === 0 ? <Mic className="text-gold" size={32} /> : <GraduationCap className="text-gold" size={32} />}
                 <h3 style={{ margin: 0, fontSize: '2rem' }}>{member.name}</h3>
               </div>

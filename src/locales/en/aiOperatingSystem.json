@@ -60,10 +60,10 @@
       "Immediate Speed to Market"
     ],
     "chart": {
-      "fragmentedLabel": "Point Tools (Fragmented)",
-      "fragmentedValue": "Low Impact",
-      "customLabel": "Custom Build (Expensive/Slow)",
-      "customValue": "High Risk",
+      "fragmentedLabel": "Point tools",
+      "fragmentedValue": "Low impact",
+      "customLabel": "Custom build: slow & costly",
+      "customValue": "High risk",
       "aosLabel": "AI Operating System",
       "aosValue": "Maximized ROI"
     }

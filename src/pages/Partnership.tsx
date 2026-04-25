@@ -51,10 +51,10 @@ export default function Partnership() {
         title={t('seo.title')}
         description={t('seo.description')}
       />
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ${styles.heroInner}`}>
         <div className={`container ${styles.heroContent}`}>
           <span className="badge">{t('hero.badge')}</span>
-          <h1 className="animate-slide-up">
+          <h1 className={`animate-slide-up ${styles.heroTitle} ${styles.heroTitleBoost}`}>
             {t('hero.titleBefore')}{' '}
             <span className="text-gold">{t('hero.titleAccent')}</span>{' '}
             {t('hero.titleAfter')}
@@ -170,10 +170,10 @@ export default function Partnership() {
               const Icon = item.icon;
               return (
                 <div key={idx} className={`glass-panel reveal ${pw.whyCard}`} ref={reveal}>
-                  <div style={{ background: 'rgba(223,172,94,0.1)', padding: '1rem', borderRadius: '12px', flexShrink: 0, width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={28} color="var(--accent-gold)" />
+                  <div className={pw.whyCardIconWrap}>
+                    <Icon size={28} color="var(--accent-gold)" aria-hidden />
                   </div>
-                  <div>
+                  <div className={pw.whyCardBody}>
                     <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem', fontSize: '1.3rem' }}>{t(item.titleKey)}</h3>
                     <p className="text-secondary" style={{ lineHeight: 1.6 }}>{t(item.descKey)}</p>
                   </div>
@@ -194,8 +194,11 @@ export default function Partnership() {
             </p>
           </div>
 
-          <div className="glass-panel" style={{ overflow: 'hidden' }}>
-            <div className="hidden md:grid md:grid-cols-3 gap-6 p-6" style={{ background: 'rgba(255,255,255,0.02)', borderBottom: '1px solid var(--border-light)', fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}>
+          <div className={`glass-panel ${pw.revenueWrap}`}>
+            <div
+              className={`hidden md:grid md:grid-cols-3 gap-6 ${pw.revenueTableHeader}`}
+              style={{ background: 'rgba(255,255,255,0.02)', borderBottom: '1px solid var(--border-light)', fontSize: '0.9rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px' }}
+            >
               <div>{t('revenue.colVolume')}</div>
               <div>{t('revenue.colDealValue')}</div>
               <div>{t('revenue.colPartnerShare')}</div>
@@ -205,21 +208,25 @@ export default function Partnership() {
               const row = t(`revenue.rows.${idx}`, { returnObjects: true }) as { deals: string; context: string; value: string; share: string };
               const featured = idx === 1;
               return (
-                <div key={idx} className="grid md:grid-cols-3 gap-6 p-6 items-center" style={{ borderBottom: idx < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none', background: featured ? 'rgba(223, 172, 94, 0.05)' : 'transparent', position: 'relative' }}>
+                <div
+                  key={idx}
+                  className={`grid md:grid-cols-3 gap-6 items-center min-w-0 ${pw.revenueRow}`}
+                  style={{ borderBottom: idx < 2 ? '1px solid rgba(255,255,255,0.05)' : 'none', background: featured ? 'rgba(223, 172, 94, 0.05)' : 'transparent', position: 'relative' }}
+                >
                   {featured && <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: 'var(--accent-gold)' }}></div>}
 
-                  <div>
+                  <div className="min-w-0">
                     <div className="md:hidden" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>{t('revenue.mobileVolume')}</div>
                     <div style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.25rem' }}>{row.deals}</div>
                     <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{row.context}</div>
                   </div>
 
-                  <div>
+                  <div className="min-w-0">
                     <div className="md:hidden" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>{t('revenue.colDealValue')}</div>
                     <div style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', fontFamily: 'monospace' }}>{row.value}</div>
                   </div>
 
-                  <div>
+                  <div className="min-w-0">
                     <div className="md:hidden" style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>{t('revenue.colPartnerShare')}</div>
                     <div style={{ fontSize: '1.6rem', fontWeight: 700, color: featured ? 'var(--accent-gold)' : 'var(--text-primary)' }}>{row.share}</div>
                   </div>

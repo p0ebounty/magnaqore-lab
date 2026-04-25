@@ -70,10 +70,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </button>
         </div>
 
-        <div className={styles.langDesktop}>
-          <LanguageSwitcher variant="segment" />
-        </div>
-
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className={styles.mobileNav}>
@@ -87,9 +83,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {t(link.labelKey)}
               </Link>
             ))}
-            <div className={styles.mobileLangBlock}>
-              <LanguageSwitcher variant="select" />
-            </div>
             <button
               type="button"
               onClick={() => { setIsMenuOpen(false); openContactModal(); }}
@@ -122,6 +115,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </footer>
+
+      <LanguageSwitcher />
     </div>
   );
 }

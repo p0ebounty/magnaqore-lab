@@ -4,6 +4,7 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
+import aosStyles from './AiOperatingSystem.module.css';
 
 function useReveal() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -50,15 +51,15 @@ export default function AiOperatingSystem() {
         title={t('seo.title')}
         description={t('seo.description')}
       />
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ${styles.heroInner}`}>
         <div className={`container ${styles.heroContent}`}>
           <span className="badge">{t('hero.badge')}</span>
-          <h1 className="animate-slide-up">
+          <h1 className={`animate-slide-up ${styles.heroTitle} ${styles.heroTitleBoost}`}>
             {t('hero.titleBefore')}{' '}
             <span className="text-gold">{t('hero.titleAccent')}</span>
             {t('hero.titleAfter')}
           </h1>
-          <h2 className={`animate-slide-up ${styles.heroSubtitle} delay-200`}>
+          <h2 className={`animate-slide-up ${styles.heroSubtitle} ${styles.heroSubtitleBoost} delay-200`}>
             {t('hero.subtitle')}
           </h2>
           <p className={`animate-slide-up ${styles.heroBody} delay-300`}>
@@ -137,30 +138,31 @@ export default function AiOperatingSystem() {
           <div className="text-center reveal" ref={reveal} style={{ marginBottom: '4rem' }}>
             <span className="badge">{t('advantage.badge')}</span>
             <h2>{t('advantage.heading')}</h2>
-            <p className="text-secondary" style={{ fontSize: '1.2rem' }}>
+            <p className={`text-secondary ${aosStyles.advantageSub}`}>
               {t('advantage.sub')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="reveal" ref={reveal}>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <ul className={aosStyles.advantageList}>
                 {advantageBullets.map((adv, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <CheckCircle2 className="text-gold" size={28} />
-                    <span style={{ fontSize: '1.3rem', fontWeight: 500 }}>{adv}</span>
+                  <li key={idx} className={aosStyles.advantageListItem}>
+                    <span className={aosStyles.advantageListIcon} aria-hidden>
+                      <CheckCircle2 className="text-gold" size={24} strokeWidth={2} />
+                    </span>
+                    <span className={aosStyles.advantageListText}>{adv}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="glass-panel reveal" ref={reveal} style={{ padding: '3rem', position: 'relative' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-
+            <div className={`glass-panel reveal ${aosStyles.advantageChart}`} ref={reveal}>
+              <div className={aosStyles.chartRows}>
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                    <span className="text-secondary">{t('advantage.chart.fragmentedLabel')}</span>
-                    <span className="text-muted">{t('advantage.chart.fragmentedValue')}</span>
+                  <div className={aosStyles.chartMeta}>
+                    <span className={`text-secondary ${aosStyles.chartLabel}`}>{t('advantage.chart.fragmentedLabel')}</span>
+                    <span className={`text-muted ${aosStyles.chartValue}`}>{t('advantage.chart.fragmentedValue')}</span>
                   </div>
                   <div style={{ height: '8px', width: '100%', background: 'rgba(255,255,255,0.05)', borderRadius: '4px' }}>
                     <div style={{ height: '100%', width: '30%', background: 'var(--text-muted)', borderRadius: '4px' }}></div>
@@ -168,9 +170,9 @@ export default function AiOperatingSystem() {
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                    <span className="text-secondary">{t('advantage.chart.customLabel')}</span>
-                    <span className="text-muted">{t('advantage.chart.customValue')}</span>
+                  <div className={aosStyles.chartMeta}>
+                    <span className={`text-secondary ${aosStyles.chartLabel}`}>{t('advantage.chart.customLabel')}</span>
+                    <span className={`text-muted ${aosStyles.chartValue}`}>{t('advantage.chart.customValue')}</span>
                   </div>
                   <div style={{ height: '8px', width: '100%', background: 'rgba(255,255,255,0.05)', borderRadius: '4px' }}>
                     <div style={{ height: '100%', width: '50%', background: 'var(--text-secondary)', borderRadius: '4px' }}></div>
@@ -178,15 +180,14 @@ export default function AiOperatingSystem() {
                 </div>
 
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                    <span className="text-gold" style={{ fontWeight: 600 }}>{t('advantage.chart.aosLabel')}</span>
-                    <span className="text-gold" style={{ fontWeight: 600 }}>{t('advantage.chart.aosValue')}</span>
+                  <div className={aosStyles.chartMeta}>
+                    <span className={`text-gold ${aosStyles.chartLabel}`} style={{ fontWeight: 600 }}>{t('advantage.chart.aosLabel')}</span>
+                    <span className={`text-gold ${aosStyles.chartValue}`} style={{ fontWeight: 600 }}>{t('advantage.chart.aosValue')}</span>
                   </div>
                   <div style={{ height: '8px', width: '100%', background: 'rgba(255,255,255,0.05)', borderRadius: '4px' }}>
                     <div style={{ height: '100%', width: '95%', background: 'var(--accent-gold)', borderRadius: '4px', boxShadow: '0 0 10px var(--accent-gold)' }}></div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

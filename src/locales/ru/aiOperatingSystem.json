@@ -60,9 +60,9 @@
       "Быстрый выход на рынок"
     ],
     "chart": {
-      "fragmentedLabel": "Точечные инструменты (фрагментация)",
+      "fragmentedLabel": "Точечные инструменты",
       "fragmentedValue": "Низкий эффект",
-      "customLabel": "Кастомная разработка (дорого/долго)",
+      "customLabel": "Кастом: дорого и долго",
       "customValue": "Высокий риск",
       "aosLabel": "AI Operating System",
       "aosValue": "Максимальный ROI"

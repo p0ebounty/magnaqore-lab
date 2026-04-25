@@ -137,9 +137,11 @@ export default function LandingPage() {
             <div className={styles.diagramNodes}>
               <div className={`${styles.node} ${styles.nodeFragmented}`}>{t('marketShift.diagramFrom')}</div>
               <div className={styles.diagramArrow}>→</div>
-              <div className={`${styles.node} ${styles.nodeSystem}`}>{t('marketShift.diagramTo')}</div>
+              <div className={styles.nodeSystemWrap}>
+                <div className={styles.diagramGlow} aria-hidden />
+                <div className={`${styles.node} ${styles.nodeSystem}`}>{t('marketShift.diagramTo')}</div>
+              </div>
             </div>
-            <div className={styles.diagramGlow}></div>
           </div>
         </div>
       </section>

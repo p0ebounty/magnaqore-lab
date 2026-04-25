@@ -10,3 +10,15 @@
     padding: 3rem;
   }
 }
+
+/* Team credibility cards: inline was 3rem on all breakpoints — too narrow content on phones. */
+:global(.glass-panel).teamCredCard {
+  border-top: 4px solid var(--accent-gold);
+  padding: 1.5rem 1.125rem;
+}
+
+@media (min-width: 768px) {
+  :global(.glass-panel).teamCredCard {
+    padding: 3rem;
+  }
+}
