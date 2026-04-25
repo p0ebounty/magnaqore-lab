@@ -2,8 +2,9 @@ import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, CheckCircle2, PlayCircle } from 'lucide-react';
 import SEO from '../components/SEO';
-import { useContactModal } from '../context/ContactContext';
 import styles from './Clients.module.css';
+
+const CAL_CONSULTATION_URL = 'https://cal.com/ina.nistoras/consultation';
 
 type SimpleCard = {
   title: string;
@@ -67,7 +68,6 @@ function useReveal() {
 
 export default function Clients() {
   const { t } = useTranslation('clients');
-  const { openContactModal } = useContactModal();
   const reveal = useReveal();
 
   const heroBadgeText = t('hero.badge');
@@ -109,9 +109,9 @@ export default function Clients() {
               {t('hero.lead')}
             </p>
             <div className={`animate-slide-up delay-300 ${styles.heroActions}`}>
-              <button type="button" className="btn-primary" onClick={openContactModal}>
+              <a href={CAL_CONSULTATION_URL} className="btn-primary">
                 {t('hero.primaryCta')}
-              </button>
+              </a>
               <a href="#proof" className="btn-secondary">
                 {t('hero.secondaryCta')}
               </a>
@@ -295,9 +295,9 @@ export default function Clients() {
                 </div>
               ))}
             </div>
-            <button type="button" className="btn-primary" onClick={openContactModal}>
+            <a href={CAL_CONSULTATION_URL} className="btn-primary">
               {t('cta.button')} <ArrowRight size={18} aria-hidden />
-            </button>
+            </a>
             <p className={styles.disclaimer}>{t('cta.disclaimer')}</p>
           </div>
         </div>

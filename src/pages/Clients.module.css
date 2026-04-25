@@ -499,7 +499,7 @@
   font-size: 1.05rem;
 }
 
-.finalCta button {
+.finalCta :global(.btn-primary) {
   gap: 0.55rem;
 }
 
