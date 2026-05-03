@@ -1,10 +1,18 @@
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, CheckCircle2, PlayCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import styles from './Clients.module.css';
 
 const CAL_CONSULTATION_URL = 'https://cal.com/ina.nistoras/consultation';
+const CLIENT_VIDEO_IDS = {
+  en: 'IhQSdricaGU',
+  ru: 'YqoSkqVgDqk',
+} as const;
+
+function getClientVideoId(language: string) {
+  return language.split('-')[0] === 'ru' ? CLIENT_VIDEO_IDS.ru : CLIENT_VIDEO_IDS.en;
+}
 
 type SimpleCard = {
   title: string;
@@ -67,10 +75,11 @@ function useReveal() {
 }
 
 export default function Clients() {
-  const { t } = useTranslation('clients');
+  const { t, i18n } = useTranslation('clients');
   const reveal = useReveal();
 
   const heroBadgeText = t('hero.badge');
+  const heroVideoId = getClientVideoId(i18n.resolvedLanguage || i18n.language);
   const heroStats = t('hero.stats', { returnObjects: true }) as { value: string; label: string }[];
   const painCards = t('problem.cards', { returnObjects: true }) as SimpleCard[];
   const solutionCards = t('solution.cards', { returnObjects: true }) as NumberedCard[];
@@ -120,9 +129,15 @@ export default function Clients() {
 
           <div className={`animate-scale-up delay-300 ${styles.videoCard}`} aria-label={t('hero.video.aria')}>
             <div className={styles.videoFrame}>
-              <div className={styles.videoPlay} aria-hidden>
-                <PlayCircle size={54} strokeWidth={1.5} />
-              </div>
+              <iframe
+                className={styles.videoIframe}
+                src={`https://www.youtube-nocookie.com/embed/${heroVideoId}?rel=0&iv_load_policy=3&playsinline=1`}
+                title={t('hero.video.aria')}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
             <div className={styles.statGrid}>
               {heroStats.map((stat) => (
