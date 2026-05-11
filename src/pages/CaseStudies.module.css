@@ -31,9 +31,11 @@
 }
 
 .flagshipBadge {
+  justify-content: center;
   border-color: rgba(212, 5, 17, 0.42);
   background: rgba(99, 30, 0, 0.12);
   color: #671400;
+  text-align: center;
   box-shadow: 0 8px 22px rgba(212, 5, 17, 0.1);
 }
 
