@@ -4,6 +4,7 @@
     "logoAlt": "MagnaQore"
   },
   "nav": {
+    "ariaLabel": "Main navigation",
     "aiOperatingSystem": "AI Operating System",
     "partnership": "Partnership",
     "clients": "Clients",

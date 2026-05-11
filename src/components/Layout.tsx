@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useId } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -26,6 +26,7 @@ const footerLinks = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const mobileMenuId = useId();
   const location = useLocation();
   const { openContactModal } = useContactModal();
   const { t } = useTranslation();
@@ -45,6 +46,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
     return () => { document.body.style.overflow = ''; };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <div className={styles.wrapper}>
@@ -89,7 +94,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <button
             type="button"
             className={styles.mobileMenuBtn}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen(open => !open)}
+            aria-controls={mobileMenuId}
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? t('a11y.closeMenu') : t('a11y.openMenu')}
           >
@@ -97,9 +103,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </button>
         </div>
 
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className={styles.mobileNav}>
+      </header>
+
+      {isMenuOpen ? (
+        <>
+          <button
+            type="button"
+            className={styles.mobileNavBackdrop}
+            onClick={() => setIsMenuOpen(false)}
+            aria-label={t('a11y.closeMenu')}
+          />
+          <nav id={mobileMenuId} className={styles.mobileNav} aria-label={t('nav.ariaLabel')}>
             {!hideNavigationLinks
               ? navLinks.map(link => (
                 <Link
@@ -123,13 +137,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 openContactModal();
               }}
               className={styles.mobileNavLinkGold}
-              style={{ textAlign: 'left', width: '100%', fontFamily: 'inherit' }}
             >
               {isClientsPage ? 'Book Call' : t('cta.partnerWithUs')}
             </button>
-          </div>
-        )}
-      </header>
+          </nav>
+        </>
+      ) : null}
 
       <main className={styles.main}>
         {children}

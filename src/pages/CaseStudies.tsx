@@ -22,7 +22,7 @@ const DHL_TESTIMONIAL_VIDEOS = [
   { role: 'Marketing Director', youtubeId: '_WG9R4MT1uI' },
   { role: 'Sales Director', youtubeId: '2CvYKQzbfAo' },
   { role: 'Finance Director', youtubeId: 'B70MudN2ZCI' },
-  { role: 'Country Director PA', youtubeId: '7Vf7M5WsGPI' },
+  { role: 'Operation Director', youtubeId: 'CNNGE0wiTPg' },
 ] as const;
 
 export default function CaseStudies() {
