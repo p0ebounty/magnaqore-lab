@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 import caseStyles from './CaseStudies.module.css';
 import { caseStudies, teamMembers, credibilityHighlights } from '../data/content';
+import dhlLogo from '../assets/dhl-logo.jpg';
 
 type CredibilityBullet = {
   text: string;
@@ -13,6 +14,16 @@ type CredibilityBullet = {
   embedUrl?: string;
   subLinks?: { label: string; url: string }[];
 };
+
+const DHL_TESTIMONIAL_VIDEOS = [
+  { role: 'HR Director', youtubeId: 'a6bLtEhsSOM' },
+  { role: 'Customer Service Director', youtubeId: '7NXdrvbmZes' },
+  { role: 'IT Director', youtubeId: 'YeJkEjdW7Zw' },
+  { role: 'Marketing Director', youtubeId: '_WG9R4MT1uI' },
+  { role: 'Sales Director', youtubeId: '2CvYKQzbfAo' },
+  { role: 'Finance Director', youtubeId: 'B70MudN2ZCI' },
+  { role: 'Country Director PA', youtubeId: '7Vf7M5WsGPI' },
+] as const;
 
 export default function CaseStudies() {
   const { t } = useTranslation('caseStudies');
@@ -43,6 +54,7 @@ export default function CaseStudies() {
 
   const flagship = caseStudies.find(c => c.id === 'dhl');
   const others = caseStudies.filter(c => c.id !== 'dhl');
+  const flagshipSupportLinks = flagship?.links?.slice(1) ?? [];
 
   const linkLabel = (caseId: string, idx: number, fallback: string) => {
     const key = `cases.${caseId}.linkLabels.${idx}`;
@@ -74,25 +86,57 @@ export default function CaseStudies() {
 
           {flagship && (
             <div className={`glass-panel reveal ${caseStyles.flagshipCard}`} ref={reveal}>
-              <span className="badge">{t(`cases.${flagship.id}.tag`)}</span>
-              <h2 style={{ fontSize: 'clamp(1.8rem, 6vw, 3rem)', margin: '1rem 0', lineHeight: 1.1 }}>{t(`cases.${flagship.id}.title`)}</h2>
-              <p className="text-gold" style={{ letterSpacing: '2px', marginBottom: '2rem' }}>
-                {t(`cases.${flagship.id}.sector`)} · {t(`cases.${flagship.id}.geography`)}
-              </p>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-primary)', lineHeight: 1.8 }}>
-                {t(`cases.${flagship.id}.description`)}
-              </p>
+              <div className={caseStyles.flagshipHeader}>
+                <span className={`badge ${caseStyles.flagshipBadge}`}>{t(`cases.${flagship.id}.tag`)}</span>
+                <div className={caseStyles.dhlLogoPlate}>
+                  <img src={dhlLogo} alt={`${t(`cases.${flagship.id}.client`)} logo`} />
+                </div>
+              </div>
+              <div className={caseStyles.flagshipContent}>
+                <div>
+                  <p className={caseStyles.flagshipMeta}>
+                    {t(`cases.${flagship.id}.sector`)} · {t(`cases.${flagship.id}.geography`)}
+                  </p>
+                  <h2 className={caseStyles.flagshipTitle}>{t(`cases.${flagship.id}.title`)}</h2>
+                  <p className={caseStyles.flagshipDescription}>
+                    {t(`cases.${flagship.id}.description`)}
+                  </p>
+                </div>
+              </div>
               {flagship.outcome && (
-                <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(235, 177, 52, 0.05)', borderLeft: '4px solid var(--accent-gold)' }}>
-                  <strong className="text-gold" style={{ display: 'block', marginBottom: '0.5rem' }}>{t('labels.businessOutcome')}</strong>
-                  <p style={{ margin: 0 }}>{flagship.outcome}</p>
+                <div className={caseStyles.flagshipOutcome}>
+                  <strong>{t('labels.businessOutcome')}</strong>
+                  <p>{flagship.outcome}</p>
                 </div>
               )}
-              {flagship.links && flagship.links.length > 0 && (
-                <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                  {flagship.links.map((link, idx) => (
-                    <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}>
-                      {linkLabel(flagship.id, idx, link.label)} ↗
+              <div className={caseStyles.testimonialSection}>
+                <div className={caseStyles.testimonialIntro}>
+                  <h3>{t('labels.dhlTestimonials')}</h3>
+                  <p>{t('labels.dhlTestimonialsSub')}</p>
+                </div>
+                <div className={caseStyles.testimonialGrid}>
+                  {DHL_TESTIMONIAL_VIDEOS.map((video) => (
+                    <article key={video.youtubeId} className={caseStyles.testimonialCard}>
+                      <div className={caseStyles.testimonialFrame}>
+                        <iframe
+                          src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?rel=0&modestbranding=1&playsinline=1`}
+                          title={t('labels.videoTestimonialTitle', { role: video.role })}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                      <p>{video.role}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+              {flagshipSupportLinks.length > 0 && (
+                <div className={caseStyles.flagshipLinks}>
+                  {flagshipSupportLinks.map((link, idx) => (
+                    <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                      {linkLabel(flagship.id, idx + 1, link.label)} ↗
                     </a>
                   ))}
                 </div>

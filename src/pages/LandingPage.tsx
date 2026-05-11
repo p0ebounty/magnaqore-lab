@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 import partnerHeroImg from '../assets/future_interface_partner.png';
 
-import { teamMembers } from '../data/content';
 import ValueProposition from '../components/landing/ValueProposition';
 import AiSystemPreview from '../components/landing/AiSystemPreview';
 import AboutAndProof from '../components/landing/AboutAndProof';
 import IcebergDiagram from '../components/landing/IcebergDiagram';
 import SpotlightCard from '../components/SpotlightCard';
 import MagneticButton from '../components/MagneticButton';
+import TeamSection from '../components/team/TeamSection';
 import { useContactModal } from '../context/ContactContext';
 
 function useReveal() {
@@ -43,8 +43,6 @@ function useReveal() {
 
   return addToRefs;
 }
-
-type TeamId = 'ina' | 'maryia' | 'artyom';
 
 export default function LandingPage() {
   const { t } = useTranslation('landing');
@@ -213,64 +211,7 @@ export default function LandingPage() {
       <AiSystemPreview />
       <AboutAndProof />
 
-      <section className="section" style={{ position: 'relative' }}>
-        <div className="container text-center reveal" ref={reveal} style={{ marginBottom: '4rem' }}>
-          <span className="badge">{t('team.badge')}</span>
-          <h2>{t('team.heading')}</h2>
-          <p className="text-secondary" style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
-            {t('team.sub')}
-          </p>
-        </div>
-
-        <div className={`container grid md:grid-cols-3 gap-8 ${styles.teamGrid}`}>
-          {teamMembers.map((member, idx) => {
-            const tid = member.id as TeamId;
-            return (
-              <SpotlightCard key={member.id} className={`glass-panel reveal ${styles.teamCard}`} ref={reveal} style={{ transitionDelay: `${idx * 150}ms`, overflow: 'hidden' }}>
-                <div className={styles.teamPhotoWrapper}>
-                  <img src={member.photoUrl} alt={member.name} className={styles.teamPhoto} />
-                  <div className={styles.teamPhotoOverlay}></div>
-                </div>
-                <div style={{ padding: '2rem' }}>
-                  <h3 style={{ marginBottom: '0.25rem' }}>{member.name}</h3>
-                  <p className="text-gold" style={{ fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem', letterSpacing: '0.05em' }}>{t(`teamMembers.${tid}.title`).toUpperCase()}</p>
-                  <p className="text-secondary" style={{ fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.4' }}>{t(`teamMembers.${tid}.tags`)}</p>
-
-                  {member.trustLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{t(`teamMembers.${tid}.trustLine`)}</p>}
-                  {member.statLine && <p style={{ fontSize: '0.85rem', marginBottom: '1rem', padding: '0.5rem', background: 'var(--surface-color)', borderRadius: '4px' }}>{t(`teamMembers.${tid}.statLine`)}</p>}
-                  {member.roleDescription && <p style={{ fontSize: '0.85rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>{t(`teamMembers.${tid}.roleDescription`)}</p>}
-
-                  <div className={styles.teamHighlights}>
-                    {(t(`teamMembers.${tid}.highlights`, { returnObjects: true }) as { title: string; bullets: string[] }[]).map((highlight, hIdx) => (
-                      <div key={hIdx} style={{ marginBottom: '1rem' }}>
-                        <strong style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{highlight.title}</strong>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                          {highlight.bullets.map((text, bIdx) => {
-                            const orig = member.highlights[hIdx]?.bullets[bIdx];
-                            const bullet = orig;
-                            return (
-                              <li key={bIdx} style={{ fontSize: '0.9rem', marginBottom: '0.5rem', position: 'relative', paddingLeft: '1rem', color: 'var(--text-secondary)' }}>
-                                <span style={{ position: 'absolute', left: 0, color: 'var(--accent-gold)' }}>•</span>
-                                {bullet?.url ? (
-                                  <a href={bullet.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline', textDecorationColor: 'var(--border-light)' }} className="hover:text-gold transition-colors">
-                                    {text}
-                                  </a>
-                                ) : (
-                                  <span>{text}</span>
-                                )}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </SpotlightCard>
-            );
-          })}
-        </div>
-      </section>
+      <TeamSection />
 
       <section className={`section ${styles.ctaSection}`}>
         <div className="container text-center reveal" ref={reveal}>

@@ -12,7 +12,10 @@
   "labels": {
     "businessOutcome": "BUSINESS OUTCOME:",
     "outcome": "OUTCOME",
-    "client": "Client:"
+    "client": "Client:",
+    "dhlTestimonials": "DHL Qatar Director Testimonials",
+    "dhlTestimonialsSub": "Embedded video testimonials from department directors who joined the AI capability program.",
+    "videoTestimonialTitle": "{{role}} testimonial video"
   },
   "credibility": {
     "badge": "EXPERTS & LEADERS",

@@ -12,7 +12,10 @@
   "labels": {
     "businessOutcome": "БИЗНЕС-РЕЗУЛЬТАТ:",
     "outcome": "РЕЗУЛЬТАТ",
-    "client": "Клиент:"
+    "client": "Клиент:",
+    "dhlTestimonials": "Видеоотзывы директоров DHL Qatar",
+    "dhlTestimonialsSub": "Встроенные видеоотзывы директоров подразделений, прошедших программу по ИИ-компетенциям.",
+    "videoTestimonialTitle": "Видеоотзыв: {{role}}"
   },
   "credibility": {
     "badge": "ЭКСПЕРТЫ И ЛИДЕРЫ",

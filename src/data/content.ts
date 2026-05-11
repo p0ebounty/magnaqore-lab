@@ -1,6 +1,7 @@
 import innaPhoto from '../assets/inna.jpg';
 import mashaPhoto from '../assets/masha.jpg';
 import artemPhoto from '../assets/artem.jpg';
+import elenaPhoto from '../assets/elena.jpg';
 
 export interface LinkItem {
   label: string;
@@ -218,6 +219,51 @@ export const teamMembers: TeamMember[] = [
           { text: "AI & LLM Systems: LLM-powered workflows and integrations, AI agents and multi-agent orchestration, Prompt architecture and instruction design, Retrieval-Augmented Generation (RAG) systems, Semantic search and vector database implementation, AI quality monitoring and system observability" },
           { text: "Systems & Infrastructure: API architecture, webhooks, and authentication, Data pipelines, ETL, and transformation logic, SQL / NoSQL database structures, Cloud deployment environments (AWS, Azure, Google Cloud), Real-time and batch processing workflows, Middleware and system interoperability, CRM platforms including Salesforce, HubSpot, and Microsoft Dynamics" },
           { text: "Integration & Tools: Integration environments: N8N, Make, Zapier, Directus, Cursor, Lovable, Antigravity, and other AI implementation frameworks. Working familiarity with enterprise systems: SAP, Oracle, and NetSuite. Security, compliance, and operational deployment considerations for enterprise environments." }
+        ]
+      }
+    ]
+  },
+  {
+    id: "elena",
+    name: "Elena Malyugina",
+    title: "AI Business Auditor",
+    tags: "Business Transformation Specialist · Logistics Operations Expert · Process Architecture",
+    photoUrl: elenaPhoto,
+    trustLine: "Trusted across: Enterprise Logistics · International Trade · Corporate Transformation",
+    highlights: [
+      {
+        title: "1. Operational Transformation Track Record",
+        bullets: [
+          { text: "13+ years leading operations, transformation, and process optimization inside tier-1 logistics companies" },
+          { text: "VP Strategy & Transformation — EMAX Logistics: delivered 85% of full company transformation within 12 months including sales model rebuild, CRM/ERP implementation, KPI/OKR systems, financial reporting architecture, and C-level team restructuring" },
+          { text: "CEO RU Office — DMTRANS China: built and managed Russia's direct railway delivery operations from China, delivering a 12-block train solar project with GP ~$240K" },
+          { text: "11 years at DHL Global Forwarding: from Business Implementation Team Leader to Head of Business Process Optimization & Quality Management to Head of Trade Fairs & Events, International Road" }
+        ]
+      },
+      {
+        title: "2. High-Stakes Project Delivery",
+        bullets: [
+          { text: "WorldSkills Kazan 2019: full end-to-end logistics management for ~300 deliveries, 800 tons, 45+ countries — GP ~€650K" },
+          { text: "Formula 1 (Sochi & Baku 2020–2021), Formula E 2015, Ferrari Challenge 2016, Red Bull Air Race 2018–2019: GP €200–550K per project across all transport modes including air, sea, road, and customs" },
+          { text: "DHL Crocus Expo & Expocenter: managed 80% of all exhibitions and 70%+ of exhibitors — €800K+ EBITDA" }
+        ]
+      },
+      {
+        title: "3. Systems & Governance Expertise",
+        bullets: [
+          { text: "QMS implementation and management: ISO 9001, 14001, 18001" },
+          { text: "Full-cycle CRM and TMS localization, end-user training, and organizational adoption" },
+          { text: "BPMN process architecture, financial reporting (P&L, budgeting, forecasting, bad debt management), and product approach (procurement, pricing, subcontractor management)" }
+        ]
+      },
+      {
+        title: "4. Recognition & Credentials",
+        bullets: [
+          { text: "DHL CEO Award 2018 — Best Team" },
+          { text: "DGF Russia CEO Award 2019 — Extra Mile" },
+          { text: "WorldSkills International — Deputy Chief Expert (Abu Dhabi 2017), Skill Competition Manager (Kazan 2019)" },
+          { text: "President of the Russian Federation Honorary Diploma — for Russian team preparation, Euroskills Budapest 2018 (Gold Medal)" },
+          { text: "Speaker at logistics forums and congresses: 100–500 person audiences" }
         ]
       }
     ]

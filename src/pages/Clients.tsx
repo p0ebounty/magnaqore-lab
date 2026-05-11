@@ -1,13 +1,14 @@
-import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import styles from './Clients.module.css';
+import TeamSection from '../components/team/TeamSection';
+import { useReveal } from '../hooks/useReveal';
 
 const CAL_CONSULTATION_URL = 'https://cal.com/ina.nistoras/consultation';
 const CLIENT_VIDEO_IDS = {
-  en: 'IhQSdricaGU',
-  ru: 'YqoSkqVgDqk',
+  en: 'wezdS7ihIQE',
+  ru: 'L8cRCR7m1DY',
 } as const;
 
 function getClientVideoId(language: string) {
@@ -39,41 +40,6 @@ type JourneyStep = {
   output: string;
 };
 
-type TeamCard = {
-  role: string;
-  name: string;
-  title: string;
-  bio: string;
-  creds: string[];
-};
-
-function useReveal() {
-  const elementsRef = useRef<(HTMLElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    elementsRef.current.forEach((element) => {
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (element: HTMLElement | null) => {
-    if (element && !elementsRef.current.includes(element)) {
-      elementsRef.current.push(element);
-    }
-  };
-}
-
 export default function Clients() {
   const { t, i18n } = useTranslation('clients');
   const reveal = useReveal();
@@ -87,7 +53,6 @@ export default function Clients() {
   const proofCards = t('proof.cards', { returnObjects: true }) as ProofCard[];
   const journeySteps = t('journey.steps', { returnObjects: true }) as JourneyStep[];
   const engagementItems = t('engagement.items', { returnObjects: true }) as SimpleCard[];
-  const teamCards = t('team.cards', { returnObjects: true }) as TeamCard[];
   const ctaSteps = t('cta.steps', { returnObjects: true }) as { num: string; label: string; detail: string }[];
   const marqueeRepeat = [0, 1, 2, 3] as const;
 
@@ -270,30 +235,7 @@ export default function Clients() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className={styles.sectionIntro}>
-            <span className="badge">{t('team.badge')}</span>
-            <h2>{t('team.heading')}</h2>
-            <p className="text-secondary">{t('team.sub')}</p>
-          </div>
-          <div className={styles.teamGrid}>
-            {teamCards.map((member) => (
-              <article key={member.name} className={`glass-panel reveal ${styles.teamCard}`} ref={reveal}>
-                <p className={styles.teamRole}>{member.role}</p>
-                <h3>{member.name}</h3>
-                <p className={styles.teamTitle}>{member.title}</p>
-                <p className="text-secondary">{member.bio}</p>
-                <ul>
-                  {member.creds.map((cred) => (
-                    <li key={cred}>{cred}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamSection />
 
       <section className="section">
         <div className="container">

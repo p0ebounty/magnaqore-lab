@@ -357,69 +357,6 @@
   }
 }
 
-/* Team Section */
-.teamGrid {
-  margin-top: var(--space-8);
-}
-
-.teamCard {
-  transition: transform var(--transition-normal);
-  display: flex;
-  flex-direction: column;
-}
-
-.teamCard:hover {
-  transform: translateY(-8px);
-}
-
-.teamPhotoWrapper {
-  width: 100%;
-  padding-bottom: 100%; /* Fallback for 1:1 aspect ratio */
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  position: relative;
-}
-
-.teamPhoto {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.teamCard:hover .teamPhoto {
-  transform: scale(1.05);
-}
-
-.teamPhotoOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent 50%, var(--bg-card) 100%);
-}
-
-.teamHighlights {
-  border-top: 1px solid var(--border-light);
-  padding-top: var(--space-4);
-  margin-top: auto;
-}
-
-@media (max-width: 768px) {
-  .teamCard {
-    padding: 0 !important;
-  }
-
-  /* SpotlightCard wraps children in an inner div — remove its padding on mobile */
-  .teamCard > div {
-    padding: 0 !important;
-  }
-}
-
 .ctaSection {
   background: radial-gradient(circle at center, rgba(235, 177, 52, 0.05) 0%, var(--bg-dark) 100%);
   padding: 8rem 0;

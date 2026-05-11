@@ -207,8 +207,11 @@
     "badge": "The Delivery Team",
     "heading": "We are not AI consultants. We are an AI Execution Lab.",
     "sub": "Three years of testing, building, and validating what works across industries and organizational stages.",
+    "readMore": "Read more",
+    "closeModal": "Close",
     "cards": [
       {
+        "id": "ina",
         "role": "AI Transformation Director",
         "name": "Ina Nistoras",
         "title": "International Speaker · Strategic Advisor",
@@ -221,6 +224,7 @@
         ]
       },
       {
+        "id": "maryia",
         "role": "AI Systems & Delivery Lead",
         "name": "Maryia Sakavets",
         "title": "AI Systems Lead · Program Architect",
@@ -233,6 +237,7 @@
         ]
       },
       {
+        "id": "artyom",
         "role": "AI Architect · Systems & CRM Integration",
         "name": "Artyom Malinouski",
         "title": "Technical Architecture Lead",
@@ -242,6 +247,19 @@
           "Real Estate, Logistics, HR, EdTech, E-Commerce",
           "LLM workflows, AI agents, multi-agent orchestration",
           "AWS, Azure, Google Cloud, Salesforce, HubSpot, N8N"
+        ]
+      },
+      {
+        "id": "elena",
+        "role": "AI Business Auditor",
+        "name": "Elena Malyugina",
+        "title": "Business Transformation Specialist · Logistics Operations Expert",
+        "bio": "13+ years leading operations and transformation in tier-1 logistics; VP Strategy & Transformation at EMAX; 11 years at DHL Global Forwarding.",
+        "creds": [
+          "VP Strategy & Transformation — EMAX: 85% company transformation in 12 months (sales, CRM/ERP, KPI/OKR, reporting)",
+          "WorldSkills Kazan 2019 — ~300 deliveries, 800 tons, 45+ countries — GP ~€650K",
+          "Formula 1, Formula E, Ferrari Challenge, Red Bull Air Race — €200–550K GP per project",
+          "QMS ISO 9001/14001/18001; CRM/TMS and BPMN · DHL CEO Award 2018 — Best Team"
         ]
       }
     ]

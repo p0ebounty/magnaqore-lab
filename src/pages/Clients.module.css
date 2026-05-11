@@ -204,21 +204,18 @@
 
 .cardGrid,
 .solutionGrid,
-.proofGrid,
-.teamGrid {
+.proofGrid {
   display: grid;
   gap: 1.25rem;
 }
 
-.cardGrid,
-.teamGrid {
+.cardGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .painCard,
 .solutionCard,
-.proofCard,
-.teamCard {
+.proofCard {
   position: relative;
   min-width: 0;
   padding: clamp(1.5rem, 2.2vw, 2.25rem);
@@ -248,7 +245,6 @@
 .painCard h3,
 .solutionCard h3,
 .proofCard h3,
-.teamCard h3,
 .engagementCard h3 {
   color: var(--text-primary);
 }
@@ -298,8 +294,7 @@
 }
 
 .solutionCard span,
-.proofSector,
-.teamRole {
+.proofSector {
   display: block;
   margin-bottom: 0.8rem;
   color: var(--accent-gold);
@@ -435,44 +430,6 @@
   margin-top: 0.25rem;
 }
 
-.teamCard {
-  display: flex;
-  flex-direction: column;
-}
-
-.teamTitle {
-  margin-bottom: 1rem;
-  color: var(--accent-gold);
-}
-
-.teamCard ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  margin: 1.25rem 0 0;
-  padding: 1.25rem 0 0;
-  border-top: 1px solid var(--border-light);
-  list-style: none;
-}
-
-.teamCard li {
-  display: flex;
-  gap: 0.6rem;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.45;
-}
-
-.teamCard li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  margin-top: 0.55rem;
-  flex: 0 0 6px;
-  border-radius: 50%;
-  background: var(--accent-gold);
-}
-
 .finalCta {
   position: relative;
   overflow: hidden;
@@ -552,8 +509,7 @@
   .heroGrid,
   .cardGrid,
   .solutionGrid,
-  .proofGrid,
-  .teamGrid {
+  .proofGrid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -584,7 +540,6 @@
   .cardGrid,
   .solutionGrid,
   .proofGrid,
-  .teamGrid,
   .engagementGrid,
   .ctaSteps {
     grid-template-columns: 1fr;
